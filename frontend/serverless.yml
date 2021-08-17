@@ -1,5 +1,7 @@
-app: react-starter
-name: react-starter
+org: shehanp12
+name: notesapp
+app: notesapp
+service: notesapp
 component: website
 
 inputs:
