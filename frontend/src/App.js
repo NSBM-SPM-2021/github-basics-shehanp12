@@ -1,17 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react'
+import 'react-perfect-scrollbar/dist/css/styles.css';
+import { useRoutes } from 'react-router-dom';
+import { ThemeProvider } from '@material-ui/core';
+import GlobalStyles from '../src/components/GlobalStyles';
+import '../src/mixins/chartjs';
+import theme from '../src/theme';
+import routes from '../src/routes';
 
 const App = () => {
-
-  
-  const [isAuthenticating, setIsAuthenticating] = useState(true);
-  const [isAuthenticated, userHasAuthenticated] = useState(false);
+  const routing = useRoutes(routes);
 
   return (
-    <div>
-      Scratch
-    </div>
-  )
-
-}
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      {routing}
+    </ThemeProvider>
+  );
+};
 
 export default App;
