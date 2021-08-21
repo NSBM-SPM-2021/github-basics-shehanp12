@@ -5,12 +5,12 @@ import typography from './typography';
 const theme = createTheme({
   palette: {
     background: {
-      default: '#F4F6F8',
+      default: '',
       paper: colors.common.white
     },
     primary: {
       contrastText: '#ffffff',
-      main: '#5664d2'
+      main: '#ba2e0f'
     },
     text: {
       primary: '#172b4d',

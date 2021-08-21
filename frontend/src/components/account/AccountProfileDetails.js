@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from "react";
 import {
   Box,
   Button,
@@ -7,47 +7,47 @@ import {
   CardHeader,
   Divider,
   Grid,
-  TextField
-} from '@material-ui/core';
-import React from 'react';
+  TextField,
+} from "@material-ui/core";
+import CloudUploadIcon from "@material-ui/icons/CloudUpload";
+import React from "react";
 const states = [
   {
-    value: 'alabama',
-    label: 'Alabama'
+    value: "alabama",
+    label: "Alabama",
   },
   {
-    value: 'new-york',
-    label: 'New York'
+    value: "new-york",
+    label: "New York",
   },
   {
-    value: 'san-francisco',
-    label: 'San Francisco'
-  }
+    value: "san-francisco",
+    label: "San Francisco",
+  },
 ];
 
 const AccountProfileDetails = (props) => {
   const [values, setValues] = useState({
-    bookName: 'To Kill a Mockingbird',
-    bookAuthor: 'Harper Lee',
-    description: '',
-    phone: '',
-    state: 'Alabama',
-    country: 'USA'
+    bookName: "To Kill a Mockingbird",
+    bookAuthor: "Harper Lee",
+    description: "The Description about the book",
+    phone: "",
   });
+  const file = useRef(null);
 
   const handleChange = (event) => {
     setValues({
       ...values,
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   };
 
+  function handleFileChange(event) {
+    file.current = event.target.files[0];
+  }
+
   return (
-    <form
-      autoComplete="off"
-      noValidate
-      {...props}
-    >
+    <form autoComplete="off" noValidate {...props}>
       <Card>
         <CardHeader
           subheader="The information can be edited"
@@ -55,15 +55,8 @@ const AccountProfileDetails = (props) => {
         />
         <Divider />
         <CardContent>
-          <Grid
-            container
-            spacing={3}
-          >
-            <Grid
-              item
-              md={6}
-              xs={12}
-            >
+          <Grid container spacing={3}>
+            <Grid item md={6} xs={12}>
               <TextField
                 fullWidth
                 helperText="The Name of the book"
@@ -75,11 +68,7 @@ const AccountProfileDetails = (props) => {
                 variant="outlined"
               />
             </Grid>
-            <Grid
-              item
-              md={6}
-              xs={12}
-            >
+            <Grid item md={6} xs={12}>
               <TextField
                 fullWidth
                 label="Book Author"
@@ -90,11 +79,7 @@ const AccountProfileDetails = (props) => {
                 variant="outlined"
               />
             </Grid>
-            <Grid
-              item
-              md={24}
-              xs={24}
-            >
+            <Grid item md={12} xs={12}>
               <TextField
                 fullWidth
                 id="outlined-multiline-static"
@@ -102,81 +87,31 @@ const AccountProfileDetails = (props) => {
                 name="description"
                 onChange={handleChange}
                 required
-                rows={4}
                 value={values.description}
                 variant="outlined"
               />
             </Grid>
-            {/* <Grid
-              item
-              md={6}
-              xs={12}
-            >
-              <TextField
-                fullWidth
-                label="Phone Number"
-                name="phone"
-                onChange={handleChange}
-                type="number"
-                value={values.phone}
-                variant="outlined"
-              />
-            </Grid> */}
-            <Grid
-              item
-              md={6}
-              xs={12}
-            >
-              <TextField
-                fullWidth
-                label="Country"
-                name="country"
-                onChange={handleChange}
-                required
-                value={values.country}
-                variant="outlined"
-              />
-            </Grid>
-            <Grid
-              item
-              md={6}
-              xs={12}
-            >
-              <TextField
-                fullWidth
-                label="Select State"
-                name="state"
-                onChange={handleChange}
-                required
-                select
-                SelectProps={{ native: true }}
-                value={values.state}
-                variant="outlined"
+
+            <Grid item md={6} xs={12}>
+              <Button
+                variant="contained"
+                onClick={handleFileChange}
+                startIcon={<CloudUploadIcon />}
               >
-                {states.map((option) => (
-                  <option
-                    key={option.value}
-                    value={option.value}
-                  >
-                    {option.label}
-                  </option>
-                ))}
-              </TextField>
+                Upload The Book Cover
+              </Button>
             </Grid>
           </Grid>
         </CardContent>
         <Divider />
         <Box
           sx={{
-            display: 'flex',
-            justifyContent: 'flex-end',
-            p: 2
+            display: "flex",
+            justifyContent: "flex-end",
+            p: 2,
           }}
         >
-          <Button
-            color="primary"
-            variant="contained"
-          >
+          <Button color="primary" variant="contained">
             Save details
           </Button>
         </Box>
