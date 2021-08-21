@@ -9,7 +9,7 @@ import {
   Divider,
   Typography
 } from '@material-ui/core';
-
+import React from 'react'
 const user = {
   avatar: '/static/images/avatars/avatar_6.png',
   city: 'Los Angeles',

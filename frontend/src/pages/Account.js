@@ -6,7 +6,7 @@ import {
 } from '@material-ui/core';
 import AccountProfile from '../../src/components/account/AccountProfile';
 import AccountProfileDetails from '../../src/components/account/AccountProfileDetails';
-
+import React from 'react';
 const Account = () => (
   <>
     <Helmet>

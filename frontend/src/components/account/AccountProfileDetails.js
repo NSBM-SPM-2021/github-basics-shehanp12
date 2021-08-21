@@ -9,7 +9,7 @@ import {
   Grid,
   TextField
 } from '@material-ui/core';
-
+import React from 'react';
 const states = [
   {
     value: 'alabama',
@@ -27,9 +27,9 @@ const states = [
 
 const AccountProfileDetails = (props) => {
   const [values, setValues] = useState({
-    firstName: 'Katarina',
-    lastName: 'Smith',
-    email: 'demo@devias.io',
+    bookName: 'To Kill a Mockingbird',
+    bookAuthor: 'Harper Lee',
+    description: '',
     phone: '',
     state: 'Alabama',
     country: 'USA'
@@ -51,7 +51,7 @@ const AccountProfileDetails = (props) => {
       <Card>
         <CardHeader
           subheader="The information can be edited"
-          title="Profile"
+          title="New Book Details"
         />
         <Divider />
         <CardContent>
@@ -66,12 +66,12 @@ const AccountProfileDetails = (props) => {
             >
               <TextField
                 fullWidth
-                helperText="Please specify the first name"
-                label="First name"
-                name="firstName"
+                helperText="The Name of the book"
+                label="Book Name"
+                name="bookName"
                 onChange={handleChange}
                 required
-                value={values.firstName}
+                value={values.bookName}
                 variant="outlined"
               />
             </Grid>
@@ -82,30 +82,32 @@ const AccountProfileDetails = (props) => {
             >
               <TextField
                 fullWidth
-                label="Last name"
-                name="lastName"
+                label="Book Author"
+                name="bookAuthor"
                 onChange={handleChange}
                 required
-                value={values.lastName}
+                value={values.bookAuthor}
                 variant="outlined"
               />
             </Grid>
             <Grid
               item
-              md={6}
-              xs={12}
+              md={24}
+              xs={24}
             >
               <TextField
                 fullWidth
-                label="Email Address"
-                name="email"
+                id="outlined-multiline-static"
+                label="Description"
+                name="description"
                 onChange={handleChange}
                 required
-                value={values.email}
+                rows={4}
+                value={values.description}
                 variant="outlined"
               />
             </Grid>
-            <Grid
+            {/* <Grid
               item
               md={6}
               xs={12}
@@ -119,7 +121,7 @@ const AccountProfileDetails = (props) => {
                 value={values.phone}
                 variant="outlined"
               />
-            </Grid>
+            </Grid> */}
             <Grid
               item
               md={6}
