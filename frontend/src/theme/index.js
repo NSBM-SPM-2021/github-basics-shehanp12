@@ -5,7 +5,7 @@ import typography from './typography';
 const theme = createTheme({
   palette: {
     background: {
-      default: '#ded1ce',
+      default: '',
       paper: colors.common.white
     },
     primary: {

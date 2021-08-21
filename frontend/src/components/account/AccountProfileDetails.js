@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import {
   Box,
   Button,
@@ -33,6 +33,7 @@ const AccountProfileDetails = (props) => {
     description: "The Description about the book",
     phone: "",
   });
+  const file = useRef(null);
 
   const handleChange = (event) => {
     setValues({
@@ -40,6 +41,10 @@ const AccountProfileDetails = (props) => {
       [event.target.name]: event.target.value,
     });
   };
+
+  function handleFileChange(event) {
+    file.current = event.target.files[0];
+  }
 
   return (
     <form autoComplete="off" noValidate {...props}>
@@ -90,10 +95,10 @@ const AccountProfileDetails = (props) => {
             <Grid item md={6} xs={12}>
               <Button
                 variant="contained"
-                
+                onClick={handleFileChange}
                 startIcon={<CloudUploadIcon />}
               >
-                Upload
+                Upload The Book Cover
               </Button>
             </Grid>
           </Grid>
