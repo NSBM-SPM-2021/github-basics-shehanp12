@@ -10,22 +10,10 @@ import {
   TextField,
 } from "@material-ui/core";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
+import AddPhotoAlternateIcon from "@material-ui/icons/AddPhotoAlternate";
 import React from "react";
-const states = [
-  {
-    value: "alabama",
-    label: "Alabama",
-  },
-  {
-    value: "new-york",
-    label: "New York",
-  },
-  {
-    value: "san-francisco",
-    label: "San Francisco",
-  },
-];
-
+import { s3Upload } from "../../libs/awsLib";
+import Fab from "@material-ui/core/Fab";
 const AccountProfileDetails = (props) => {
   const [values, setValues] = useState({
     bookName: "To Kill a Mockingbird",
@@ -35,6 +23,15 @@ const AccountProfileDetails = (props) => {
   });
   const file = useRef(null);
 
+  const handleUploadClick = (event) => {
+    console.log();
+    var file = event.target.files[0];
+    const reader = new FileReader();
+    var url = reader.readAsDataURL(file);
+
+   
+  };
+
   const handleChange = (event) => {
     setValues({
       ...values,
@@ -42,9 +39,10 @@ const AccountProfileDetails = (props) => {
     });
   };
 
-  function handleFileChange(event) {
+  const handleFileChange = (event) => {
+    console.log("eee", event)
     file.current = event.target.files[0];
-  }
+  };
 
   return (
     <form autoComplete="off" noValidate {...props}>
@@ -91,15 +89,25 @@ const AccountProfileDetails = (props) => {
                 variant="outlined"
               />
             </Grid>
-
             <Grid item md={6} xs={12}>
-              <Button
-                variant="contained"
-                onClick={handleFileChange}
-                startIcon={<CloudUploadIcon />}
-              >
-                Upload The Book Cover
-              </Button>
+           
+
+            <input
+  accept="image/*"
+  
+  style={{ display: 'none' }}
+  id="raised-button-file"
+  multiple
+  type="file"
+/>
+<label htmlFor="raised-button-file">
+  <Button variant="contained" component="span" 
+  startIcon={<CloudUploadIcon />}
+  
+  >
+    Upload
+  </Button>
+</label> 
             </Grid>
           </Grid>
         </CardContent>
