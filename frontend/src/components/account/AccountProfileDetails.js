@@ -10,26 +10,34 @@ import {
   TextField,
 } from "@material-ui/core";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
-import AddPhotoAlternateIcon from "@material-ui/icons/AddPhotoAlternate";
 import React from "react";
 import { s3Upload } from "../../libs/awsLib";
-import Fab from "@material-ui/core/Fab";
+import { API } from "aws-amplify";
+
 const AccountProfileDetails = (props) => {
   const [values, setValues] = useState({
     bookName: "To Kill a Mockingbird",
     bookAuthor: "Harper Lee",
     description: "The Description about the book",
-    phone: "",
   });
+
   const file = useRef(null);
 
-  const handleUploadClick = (event) => {
-    console.log();
-    var file = event.target.files[0];
-    const reader = new FileReader();
-    var url = reader.readAsDataURL(file);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-   
+    try {
+      const attachemt = file.current ? await s3Upload(file.current) : null;
+
+      await createBookDetails({ attachemt, values });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const handleUploadClick = (event) => {
+    file.current = event.target.files[0];
+    console.log(file.current.name); // Would see a path?
   };
 
   const handleChange = (event) => {
@@ -39,13 +47,8 @@ const AccountProfileDetails = (props) => {
     });
   };
 
-  const handleFileChange = (event) => {
-    console.log("eee", event)
-    file.current = event.target.files[0];
-  };
-
   return (
-    <form autoComplete="off" noValidate {...props}>
+    <form autoComplete="off" noValidate {...props} onSubmit={handleSubmit}>
       <Card>
         <CardHeader
           subheader="The information can be edited"
@@ -90,24 +93,23 @@ const AccountProfileDetails = (props) => {
               />
             </Grid>
             <Grid item md={6} xs={12}>
-           
-
-            <input
-  accept="image/*"
-  
-  style={{ display: 'none' }}
-  id="raised-button-file"
-  multiple
-  type="file"
-/>
-<label htmlFor="raised-button-file">
-  <Button variant="contained" component="span" 
-  startIcon={<CloudUploadIcon />}
-  
-  >
-    Upload
-  </Button>
-</label> 
+              <input
+                accept="image/*"
+                style={{ display: "none" }}
+                id="raised-button-file"
+                multiple
+                type="file"
+                onChange={handleUploadClick}
+              />
+              <label htmlFor="raised-button-file">
+                <Button
+                  variant="contained"
+                  component="span"
+                  startIcon={<CloudUploadIcon />}
+                >
+                  {file.current ? file : "Upload"}
+                </Button>
+              </label>
             </Grid>
           </Grid>
         </CardContent>
@@ -119,7 +121,7 @@ const AccountProfileDetails = (props) => {
             p: 2,
           }}
         >
-          <Button color="primary" variant="contained">
+          <Button color="primary" variant="contained" type="submit">
             Save details
           </Button>
         </Box>

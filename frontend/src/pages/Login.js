@@ -1,7 +1,10 @@
-import { Link as RouterLink, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Link as RouterLink, useNavigate, useHistory } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
+import { Auth } from 'aws-amplify';
+import { useAppContext } from '../libs/contextLib';
 import {
   Box,
   Button,
@@ -11,12 +14,11 @@ import {
   TextField,
   Typography
 } from '@material-ui/core';
-import FacebookIcon from '../../src/icons/Facebook';
-import GoogleIcon from '../../src/icons/Google';
-import React from 'react';
-const Login = () => {
-  const navigate = useNavigate();
+import { values } from 'lodash';
 
+const Login = () => {
+  const { userHasAuthenticated } = useAppContext();
+  const navigate = useNavigate();
   return (
     <>
       <Helmet>
@@ -34,15 +36,35 @@ const Login = () => {
         <Container maxWidth="sm">
           <Formik
             initialValues={{
-              email: 'demo@devias.io',
-              password: 'Password123'
+              email: '',
+              password: ''
             }}
             validationSchema={Yup.object().shape({
-              email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
-              password: Yup.string().max(255).required('Password is required')
+              email: Yup.string()
+                .email('Must be a valid email')
+                .max(255)
+                .required('Email is required'),
+              password: Yup.string()
+                .max(255)
+                .required('Password is required')
             })}
-            onSubmit={() => {
-              navigate('/app/dashboard', { replace: true });
+            onSubmit={async (values) => {
+              console.log('9999999', values.password);
+              try {
+                await Auth.signIn(values.email, values.password);
+
+                userHasAuthenticated(true);
+
+                console.log(
+                  'rrrrttdvdv',
+                  (await Auth.currentUserInfo()).attributes.email
+                );
+
+                navigate('/app/dashboard', { replace: true });
+              } catch (e) {
+                // onError(e);
+                console.log(e)
+              }
             }}
           >
             {({
@@ -56,70 +78,20 @@ const Login = () => {
             }) => (
               <form onSubmit={handleSubmit}>
                 <Box sx={{ mb: 3 }}>
-                  <Typography
-                    color="textPrimary"
-                    variant="h2"
-                  >
+                  <Typography color="textPrimary" variant="h2">
                     Sign in
                   </Typography>
-                  <Typography
-                    color="textSecondary"
-                    gutterBottom
-                    variant="body2"
-                  >
-                    Sign in on the internal platform
-                  </Typography>
                 </Box>
-                <Grid
-                  container
-                  spacing={3}
-                >
-                  <Grid
-                    item
-                    xs={12}
-                    md={6}
-                  >
-                    <Button
-                      color="primary"
-                      fullWidth
-                      startIcon={<FacebookIcon />}
-                      onClick={handleSubmit}
-                      size="large"
-                      variant="contained"
-                    >
-                      Login with Facebook
-                    </Button>
-                  </Grid>
-                  <Grid
-                    item
-                    xs={12}
-                    md={6}
-                  >
-                    <Button
-                      fullWidth
-                      startIcon={<GoogleIcon />}
-                      onClick={handleSubmit}
-                      size="large"
-                      variant="contained"
-                    >
-                      Login with Google
-                    </Button>
-                  </Grid>
+                <Grid container spacing={3}>
+                  <Grid item xs={12} md={6}></Grid>
+                  <Grid item xs={12} md={6}></Grid>
                 </Grid>
                 <Box
                   sx={{
                     pb: 1,
                     pt: 3
                   }}
-                >
-                  <Typography
-                    align="center"
-                    color="textSecondary"
-                    variant="body1"
-                  >
-                    or login with email address
-                  </Typography>
-                </Box>
+                ></Box>
                 <TextField
                   error={Boolean(touched.email && errors.email)}
                   fullWidth
@@ -158,20 +130,6 @@ const Login = () => {
                     Sign in now
                   </Button>
                 </Box>
-                <Typography
-                  color="textSecondary"
-                  variant="body1"
-                >
-                  Don&apos;t have an account?
-                  {' '}
-                  <Link
-                    component={RouterLink}
-                    to="/register"
-                    variant="h6"
-                  >
-                    Sign up
-                  </Link>
-                </Typography>
               </form>
             )}
           </Formik>
