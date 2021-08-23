@@ -35,6 +35,13 @@ const AccountProfileDetails = (props) => {
     }
   };
 
+  const createBookDetails = (bookDetails) => {
+    console.log(bookDetails)
+    return API.post("libraryManagmentSystem-prod", "libraryManagement", {
+      body: bookDetails,
+    });
+  };
+
   const handleUploadClick = (event) => {
     file.current = event.target.files[0];
     console.log(file.current.name); // Would see a path?

@@ -7,8 +7,8 @@ const config = {
         IDENTITY_POOL_ID: "ap-south-1:b79df574-afee-4556-9785-d1adeb7606d7"
       },
       apiGateway: {
-        REGION: "ap-south-1",
-        URL: "https://5f2uy8dmzj.execute-api.ap-south-1.amazonaws.com/prod",
+        REGION: "us-east-1",
+        URL: "https://3kqthunyf7.execute-api.us-east-1.amazonaws.com/prod/",
       },
       cognito: {
         REGION: "ap-south-1",
