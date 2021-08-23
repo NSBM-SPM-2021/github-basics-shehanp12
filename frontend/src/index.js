@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import App from './App';
+import { Amplify } from 'aws-amplify';
+import config from './config';
 
 ReactDOM.render((
   <BrowserRouter>
@@ -30,7 +32,7 @@ Amplify.configure({
   API: {
     endpoints: [
       {
-        name: "prod-notes-api",
+        name: "libraryManagmentSystem-prod",
         endpoint: config.apiGateway.URL,
         region: config.apiGateway.REGION
       },
