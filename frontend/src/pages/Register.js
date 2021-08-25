@@ -1,7 +1,5 @@
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import * as Yup from "yup";
-import { Formik } from "formik";
 import { useAppContext } from "../libs/contextLib";
 import {
   Box,
@@ -12,16 +10,26 @@ import {
   Link,
   TextField,
   Typography,
+  Grid,
+  Paper,
 } from "@material-ui/core";
 import React, { useState } from "react";
 import { Auth } from "aws-amplify";
 const Register = () => {
-  const [fields, handleFieldChange] = useFormFields({
+  const [values, setValues] = useState({
     email: "",
     password: "",
     confirmPassword: "",
     confirmationCode: "",
   });
+
+  const handleChange = (event) => {
+    setValues({
+      ...values,
+      [event.target.name]: event.target.value,
+    });
+  };
+
   const navigate = useNavigate();
   const [newUser, setNewUser] = useState(null);
   const { userHasAuthenticated } = useAppContext();
@@ -31,8 +39,8 @@ const Register = () => {
 
     try {
       const newUser = await Auth.signUp({
-        username: fields.email,
-        password: fields.password,
+        username: values.email,
+        password: values.password,
       });
 
       setNewUser(newUser);
@@ -45,8 +53,8 @@ const Register = () => {
     event.preventDefault();
 
     try {
-      await Auth.confirmSignUp(fields.email, fields.confirmationCode);
-      await Auth.signIn(fields.email, fields.password);
+      await Auth.confirmSignUp(values.email, values.confirmationCode);
+      await Auth.signIn(values.email, values.password);
 
       userHasAuthenticated(true);
     } catch (e) {
@@ -57,20 +65,27 @@ const Register = () => {
   const renderConfirmationForm = () => {
     return (
       <Container maxWidth="sm">
-        <Grid item md={6} xs={12}>
+        <Grid
+          item
+          md={12}
+          xs={12}
+          sm={6}
+          container
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
+        >
           <form onSubmit={handleConfirmationSubmit}>
-            <Paper>Confirmation Code</Paper>
             <TextField
               fullWidth
-              helperText="The Name of the book"
-              label="Book Name"
-              name="bookName"
-              onChange={handleFieldChange}
+              label="Confirmation Code"
+              name="confirmationCode"
+              onChange={handleChange}
               required
-              value={fields.confirmationCode}
+              value={values.confirmationCode}
               variant="outlined"
             />
-            <Paper>Please check your email for the code</Paper>
+
             <Box sx={{ py: 2 }}>
               <Button
                 color="primary"
@@ -102,48 +117,37 @@ const Register = () => {
             </Typography>
           </Box>
           <TextField
-            error={Boolean(touched.email && errors.email)}
             fullWidth
-            helperText={touched.email && errors.email}
             label="Email Address"
-            margin="normal"
             name="email"
-            onBlur={handleBlur}
-            onChange={handleFieldChange}
-            type="email"
-            value={fields.email}
+            onChange={handleChange}
+            required
+            value={values.email}
             variant="outlined"
           />
           <TextField
-            error={Boolean(touched.password && errors.password)}
             fullWidth
-            helperText={touched.password && errors.password}
             label="Password"
             margin="normal"
             name="password"
-            onBlur={handleBlur}
-            onChange={handleFieldChange}
+            onChange={handleChange}
             type="password"
-            value={fields.password}
+            value={values.password}
             variant="outlined"
           />
           <TextField
-            error={Boolean(touched.confirmPassword && errors.confirmPassword)}
             fullWidth
-            helperText={touched.confirmPassword && errors.confirmPassword}
             label="confirmPassword"
             margin="normal"
             name="confirmPassword"
-            onBlur={handleBlur}
             onChange={handleChange}
             type="password"
-            value={fields.confirmPassword}
+            value={values.confirmPassword}
             variant="outlined"
           />
           <Box sx={{ py: 2 }}>
             <Button
               color="primary"
-              disabled={isSubmitting}
               fullWidth
               size="large"
               type="submit"
@@ -152,14 +156,7 @@ const Register = () => {
               Sign up now
             </Button>
           </Box>
-          {/* <Typography color="textSecondary" variant="body1">
-                Have an account?{" "}
-                <Link component={RouterLink} to="/login" variant="h6">
-                  Sign in
-                </Link>
-              </Typography> */}
         </form>
-        )
       </Container>
     );
   };
