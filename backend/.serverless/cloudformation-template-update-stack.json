@@ -176,7 +176,7 @@
                     "dynamodb:DescribeTable",
                     "dynamodb:AmazonDynamoDBFullAccess"
                   ],
-                  "Resource": "arn:aws:dynamodb:ap-south-1:*:*"
+                  "Resource": "arn:aws:dynamodb:us-east-1:*:*"
                 }
               ]
             }
@@ -205,7 +205,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/libraryManagmentSystem/prod/1629657040779-2021-08-22T18:30:40.779Z/create.zip"
+          "S3Key": "serverless/libraryManagmentSystem/prod/1629864362561-2021-08-25T04:06:02.561Z/create.zip"
         },
         "Handler": "create.main",
         "Runtime": "nodejs12.x",
@@ -235,7 +235,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/libraryManagmentSystem/prod/1629657040779-2021-08-22T18:30:40.779Z/get.zip"
+          "S3Key": "serverless/libraryManagmentSystem/prod/1629864362561-2021-08-25T04:06:02.561Z/get.zip"
         },
         "Handler": "get.main",
         "Runtime": "nodejs12.x",
@@ -265,7 +265,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/libraryManagmentSystem/prod/1629657040779-2021-08-22T18:30:40.779Z/list.zip"
+          "S3Key": "serverless/libraryManagmentSystem/prod/1629864362561-2021-08-25T04:06:02.561Z/list.zip"
         },
         "Handler": "list.main",
         "Runtime": "nodejs12.x",
@@ -295,7 +295,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/libraryManagmentSystem/prod/1629657040779-2021-08-22T18:30:40.779Z/update.zip"
+          "S3Key": "serverless/libraryManagmentSystem/prod/1629864362561-2021-08-25T04:06:02.561Z/update.zip"
         },
         "Handler": "update.main",
         "Runtime": "nodejs12.x",
@@ -325,7 +325,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/libraryManagmentSystem/prod/1629657040779-2021-08-22T18:30:40.779Z/delete.zip"
+          "S3Key": "serverless/libraryManagmentSystem/prod/1629864362561-2021-08-25T04:06:02.561Z/delete.zip"
         },
         "Handler": "delete.main",
         "Runtime": "nodejs12.x",
@@ -355,7 +355,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/libraryManagmentSystem/prod/1629657040779-2021-08-22T18:30:40.779Z/billing.zip"
+          "S3Key": "serverless/libraryManagmentSystem/prod/1629864362561-2021-08-25T04:06:02.561Z/billing.zip"
         },
         "Handler": "billing.main",
         "Runtime": "nodejs12.x",
@@ -378,64 +378,64 @@
         "BillingLogGroup"
       ]
     },
-    "DeleteLambdaVersionJa9uXprQDIDQNGSIkNCndzXSLGLjPeZXyG3viLLLNco": {
-      "Type": "AWS::Lambda::Version",
-      "DeletionPolicy": "Retain",
-      "Properties": {
-        "FunctionName": {
-          "Ref": "DeleteLambdaFunction"
-        },
-        "CodeSha256": "CW02usJmN6QfD8bLYo0Aw+CBrzm2JtOuL2QgLXTnseU="
-      }
-    },
-    "GetLambdaVersiontzINJDyjaw0vlG8iDNrYgH1Pp0gK0ljIcaWfHzUvmw": {
-      "Type": "AWS::Lambda::Version",
-      "DeletionPolicy": "Retain",
-      "Properties": {
-        "FunctionName": {
-          "Ref": "GetLambdaFunction"
-        },
-        "CodeSha256": "0L5bsClvUKAs5QNxx0kvWT7mF34bQgJYSWWm4sv+/68="
-      }
-    },
-    "ListLambdaVersionn5VpUEo20z3zyCVlzrYg6zfVHM6znR2eSGMbBU0hfYM": {
-      "Type": "AWS::Lambda::Version",
-      "DeletionPolicy": "Retain",
-      "Properties": {
-        "FunctionName": {
-          "Ref": "ListLambdaFunction"
-        },
-        "CodeSha256": "Jsm9EV1ihxpPwCLoNzL2cjVn3c9F/hqNk4moKWfN41Y="
-      }
-    },
-    "UpdateLambdaVersionHORMPA8vhObO2ZXOhMJs4b4KwCIrX7YURctZB1BE": {
+    "UpdateLambdaVersion9C5U8Ex8wf7vS3VmYb1IRc66SUYgUOIa0VJIcyFNaM": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "UpdateLambdaFunction"
         },
-        "CodeSha256": "HL1Bq+1euANaf5C6dr8WL4FBDxmQTmNFFruOSe9y64g="
+        "CodeSha256": "oO3kpNzpJUleA92edLYQL9Tim5G1UYkwKfCwK9UMqpY="
       }
     },
-    "CreateLambdaVersion5h84HCVt25zZ2v4q5u8NYvjS6d22JVkWEN40Oa1L4": {
+    "GetLambdaVersionCVSjzjSyYYD8TaCA9Lh4Irng2B05UvdrDMMhSoYlJo": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "GetLambdaFunction"
+        },
+        "CodeSha256": "oIpwAOPaIxh5zcY4Z1OuTDzC/Hv6UZjW1S9geS2qdso="
+      }
+    },
+    "ListLambdaVersionJ4ip1btM7agi9aT3FIBXVr5tTTE1YUfzQJW2xcw76nQ": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "ListLambdaFunction"
+        },
+        "CodeSha256": "1VhhZQahhud6obmJyVpcUKC65mh4YzabHMUvGDnsz24="
+      }
+    },
+    "DeleteLambdaVersionUWBoDHvCCInEhnupdcEVcm90xyVf1b63cJraAmfZv4": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "DeleteLambdaFunction"
+        },
+        "CodeSha256": "N/qcAR9b+daHmSFEje+GYbJUgXtuxvra1tZ1MhFLMjo="
+      }
+    },
+    "CreateLambdaVersionygSjpekZCmrtT7rfyPSl3l7xuW26C1A8cTpHifI5I": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "CreateLambdaFunction"
         },
-        "CodeSha256": "Zja3cBi3lZXYykZeNX2m218W0/W/whWzKeCOIYrbGG0="
+        "CodeSha256": "jUUAhJYfYUoPRFWY4qEtjickFV1XlHrLu81xPxumy5E="
       }
     },
-    "BillingLambdaVersionovJquwjWAf4N8VbzVBDG2Jk4AWSB1yxt6VxqF29bMw": {
+    "BillingLambdaVersionui2R1Jth0fcDq3oUbSR06eeyh1rynD4Vh2brRvkp2g": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "BillingLambdaFunction"
         },
-        "CodeSha256": "mQ9tJSoxA9Vs25cgbHtjiekoj5zYwh1H0G1Rv34r+Ek="
+        "CodeSha256": "kk9DGVwXN0Nsx+sIKnZ+5J/pkGIdh/FXaMx6UFR0rcA="
       }
     },
     "ApiGatewayRestApi": {
@@ -450,7 +450,7 @@
         "Policy": ""
       }
     },
-    "ApiGatewayResourceNotes": {
+    "ApiGatewayResourceLibrarymanagement": {
       "Type": "AWS::ApiGateway::Resource",
       "Properties": {
         "ParentId": {
@@ -459,17 +459,17 @@
             "RootResourceId"
           ]
         },
-        "PathPart": "notes",
+        "PathPart": "libraryManagement",
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         }
       }
     },
-    "ApiGatewayResourceNotesIdVar": {
+    "ApiGatewayResourceLibrarymanagementIdVar": {
       "Type": "AWS::ApiGateway::Resource",
       "Properties": {
         "ParentId": {
-          "Ref": "ApiGatewayResourceNotes"
+          "Ref": "ApiGatewayResourceLibrarymanagement"
         },
         "PathPart": "{id}",
         "RestApiId": {
@@ -492,7 +492,7 @@
         }
       }
     },
-    "ApiGatewayMethodNotesOptions": {
+    "ApiGatewayMethodLibrarymanagementOptions": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
         "AuthorizationType": "NONE",
@@ -530,14 +530,14 @@
           ]
         },
         "ResourceId": {
-          "Ref": "ApiGatewayResourceNotes"
+          "Ref": "ApiGatewayResourceLibrarymanagement"
         },
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         }
       }
     },
-    "ApiGatewayMethodNotesIdVarOptions": {
+    "ApiGatewayMethodLibrarymanagementIdVarOptions": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
         "AuthorizationType": "NONE",
@@ -575,7 +575,7 @@
           ]
         },
         "ResourceId": {
-          "Ref": "ApiGatewayResourceNotesIdVar"
+          "Ref": "ApiGatewayResourceLibrarymanagementIdVar"
         },
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
@@ -627,19 +627,22 @@
         }
       }
     },
-    "ApiGatewayMethodNotesPost": {
+    "ApiGatewayMethodLibrarymanagementPost": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
         "HttpMethod": "POST",
         "RequestParameters": {},
         "ResourceId": {
-          "Ref": "ApiGatewayResourceNotes"
+          "Ref": "ApiGatewayResourceLibrarymanagement"
         },
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         },
         "ApiKeyRequired": false,
-        "AuthorizationType": "AWS_IAM",
+        "AuthorizationType": "COGNITO_USER_POOLS",
+        "AuthorizerId": {
+          "Ref": "1UnderscoreNmptlLWJMApiGatewayAuthorizer"
+        },
         "Integration": {
           "IntegrationHttpMethod": "POST",
           "Type": "AWS_PROXY",
@@ -669,17 +672,15 @@
         },
         "MethodResponses": []
       },
-      "DependsOn": [
-        "CreateLambdaPermissionApiGateway"
-      ]
+      "DependsOn": "1UnderscoreNmptlLWJMApiGatewayAuthorizer"
     },
-    "ApiGatewayMethodNotesIdVarGet": {
+    "ApiGatewayMethodLibrarymanagementIdVarGet": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
         "HttpMethod": "GET",
         "RequestParameters": {},
         "ResourceId": {
-          "Ref": "ApiGatewayResourceNotesIdVar"
+          "Ref": "ApiGatewayResourceLibrarymanagementIdVar"
         },
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
@@ -719,13 +720,13 @@
         "GetLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayMethodNotesGet": {
+    "ApiGatewayMethodLibrarymanagementGet": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
         "HttpMethod": "GET",
         "RequestParameters": {},
         "ResourceId": {
-          "Ref": "ApiGatewayResourceNotes"
+          "Ref": "ApiGatewayResourceLibrarymanagement"
         },
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
@@ -765,13 +766,13 @@
         "ListLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayMethodNotesIdVarPut": {
+    "ApiGatewayMethodLibrarymanagementIdVarPut": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
         "HttpMethod": "PUT",
         "RequestParameters": {},
         "ResourceId": {
-          "Ref": "ApiGatewayResourceNotesIdVar"
+          "Ref": "ApiGatewayResourceLibrarymanagementIdVar"
         },
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
@@ -811,13 +812,13 @@
         "UpdateLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayMethodNotesIdVarDelete": {
+    "ApiGatewayMethodLibrarymanagementIdVarDelete": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
         "HttpMethod": "DELETE",
         "RequestParameters": {},
         "ResourceId": {
-          "Ref": "ApiGatewayResourceNotesIdVar"
+          "Ref": "ApiGatewayResourceLibrarymanagementIdVar"
         },
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
@@ -903,7 +904,22 @@
         "BillingLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayDeployment1629657021157": {
+    "1UnderscoreNmptlLWJMApiGatewayAuthorizer": {
+      "Type": "AWS::ApiGateway::Authorizer",
+      "Properties": {
+        "AuthorizerResultTtlInSeconds": 300,
+        "IdentitySource": "method.request.header.Authorization",
+        "Name": "1_NmptlLWJM",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "Type": "COGNITO_USER_POOLS",
+        "ProviderARNs": [
+          "arn:aws:cognito-idp:ap-south-1:323270932585:userpool/ap-south-1_NmptlLWJM"
+        ]
+      }
+    },
+    "ApiGatewayDeployment1629864337991": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -912,14 +928,14 @@
         "StageName": "prod"
       },
       "DependsOn": [
-        "ApiGatewayMethodNotesOptions",
-        "ApiGatewayMethodNotesIdVarOptions",
+        "ApiGatewayMethodLibrarymanagementOptions",
+        "ApiGatewayMethodLibrarymanagementIdVarOptions",
         "ApiGatewayMethodBillingOptions",
-        "ApiGatewayMethodNotesPost",
-        "ApiGatewayMethodNotesIdVarGet",
-        "ApiGatewayMethodNotesGet",
-        "ApiGatewayMethodNotesIdVarPut",
-        "ApiGatewayMethodNotesIdVarDelete",
+        "ApiGatewayMethodLibrarymanagementPost",
+        "ApiGatewayMethodLibrarymanagementIdVarGet",
+        "ApiGatewayMethodLibrarymanagementGet",
+        "ApiGatewayMethodLibrarymanagementIdVarPut",
+        "ApiGatewayMethodLibrarymanagementIdVarDelete",
         "ApiGatewayMethodBillingPost"
       ]
     },
@@ -1181,19 +1197,19 @@
         "Name": "sls-libraryManagmentSystem-prod-ServerlessDeploymentBucketName"
       }
     },
-    "DeleteLambdaFunctionQualifiedArn": {
+    "UpdateLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "DeleteLambdaVersionJa9uXprQDIDQNGSIkNCndzXSLGLjPeZXyG3viLLLNco"
+        "Ref": "UpdateLambdaVersion9C5U8Ex8wf7vS3VmYb1IRc66SUYgUOIa0VJIcyFNaM"
       },
       "Export": {
-        "Name": "sls-libraryManagmentSystem-prod-DeleteLambdaFunctionQualifiedArn"
+        "Name": "sls-libraryManagmentSystem-prod-UpdateLambdaFunctionQualifiedArn"
       }
     },
     "GetLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetLambdaVersiontzINJDyjaw0vlG8iDNrYgH1Pp0gK0ljIcaWfHzUvmw"
+        "Ref": "GetLambdaVersionCVSjzjSyYYD8TaCA9Lh4Irng2B05UvdrDMMhSoYlJo"
       },
       "Export": {
         "Name": "sls-libraryManagmentSystem-prod-GetLambdaFunctionQualifiedArn"
@@ -1202,25 +1218,25 @@
     "ListLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ListLambdaVersionn5VpUEo20z3zyCVlzrYg6zfVHM6znR2eSGMbBU0hfYM"
+        "Ref": "ListLambdaVersionJ4ip1btM7agi9aT3FIBXVr5tTTE1YUfzQJW2xcw76nQ"
       },
       "Export": {
         "Name": "sls-libraryManagmentSystem-prod-ListLambdaFunctionQualifiedArn"
       }
     },
-    "UpdateLambdaFunctionQualifiedArn": {
+    "DeleteLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "UpdateLambdaVersionHORMPA8vhObO2ZXOhMJs4b4KwCIrX7YURctZB1BE"
+        "Ref": "DeleteLambdaVersionUWBoDHvCCInEhnupdcEVcm90xyVf1b63cJraAmfZv4"
       },
       "Export": {
-        "Name": "sls-libraryManagmentSystem-prod-UpdateLambdaFunctionQualifiedArn"
+        "Name": "sls-libraryManagmentSystem-prod-DeleteLambdaFunctionQualifiedArn"
       }
     },
     "CreateLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateLambdaVersion5h84HCVt25zZ2v4q5u8NYvjS6d22JVkWEN40Oa1L4"
+        "Ref": "CreateLambdaVersionygSjpekZCmrtT7rfyPSl3l7xuW26C1A8cTpHifI5I"
       },
       "Export": {
         "Name": "sls-libraryManagmentSystem-prod-CreateLambdaFunctionQualifiedArn"
@@ -1229,7 +1245,7 @@
     "BillingLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "BillingLambdaVersionovJquwjWAf4N8VbzVBDG2Jk4AWSB1yxt6VxqF29bMw"
+        "Ref": "BillingLambdaVersionui2R1Jth0fcDq3oUbSR06eeyh1rynD4Vh2brRvkp2g"
       },
       "Export": {
         "Name": "sls-libraryManagmentSystem-prod-BillingLambdaFunctionQualifiedArn"

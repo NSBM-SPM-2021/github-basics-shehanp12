@@ -27,12 +27,19 @@ const AccountProfileDetails = (props) => {
     event.preventDefault();
 
     try {
-      const attachemt = file.current ? await s3Upload(file.current) : null;
+      const attachment = file.current ? await s3Upload(file.current) : null;
 
-      await createBookDetails({ attachemt, values });
+      await createBookDetails({ attachment, values });
     } catch (e) {
       console.log(e);
     }
+  };
+
+  const createBookDetails = (bookDetails) => {
+    console.log(bookDetails)
+    return API.post("libraryManagmentSystem-prod", "libraryManagement", {
+      body: bookDetails,
+    });
   };
 
   const handleUploadClick = (event) => {
