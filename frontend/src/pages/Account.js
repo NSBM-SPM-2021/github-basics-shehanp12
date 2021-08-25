@@ -18,6 +18,9 @@ const Account = () => (
       <Container maxWidth="lg">
         <Grid container spacing={3}>
           <Grid item lg={12} md={12} xs={12}>
+            <AccountProfile />
+          </Grid>
+          <Grid item lg={12} md={12} xs={12}>
             <AccountProfileDetails />
           </Grid>
         </Grid>

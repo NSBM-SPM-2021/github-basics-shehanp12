@@ -134,6 +134,7 @@ const AccountProfileDetails = (props) => {
         </Box>
       </Card>
     </form>
+    
   );
 };
 
