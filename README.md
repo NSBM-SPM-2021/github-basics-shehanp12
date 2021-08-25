@@ -18,7 +18,7 @@ This is a Full Stack app with React  with Material Ui and NodeJs  with **Serverl
 
 ##  🖥️  The App  Architecture
 
-![alt text](/Users/shehanprasanna/Desktop/a.png)
+![alt text](https://photos.app.goo.gl/5nvdbwoLaMSSwDyS9)
 
 
 
