@@ -2,7 +2,7 @@ import React from 'react';
 const Logo = (props) => (
   <img
     alt="Logo"
-    src="/static/logo.svg"
+    src="/static/a.png"
     {...props}
   />
 );
