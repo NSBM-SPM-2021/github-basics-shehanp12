@@ -5,7 +5,7 @@
 This is a Full Stack app with React  with Material Ui and NodeJs  with **Serverless Stack Framework**  connected to AWS Server and DynamoDB database .
  
 
-# The Technology Stack 
+# 📒 The Technology Stack 
  1. React  
  2. Material Ui
  3. Amplify
@@ -16,7 +16,7 @@ This is a Full Stack app with React  with Material Ui and NodeJs  with **Serverl
  8. Serverless  Framework
 
 
-## The App  Architecture
+## 🖥️ The App  Architecture
 
 ![image](/Users/shehanprasanna/Desktop/a.png)
 
