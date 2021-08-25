@@ -12,7 +12,7 @@ import { Auth } from "aws-amplify";
 const App = () => {
   const [isAuthenticating, setIsAuthenticating] = useState(true);
   const [isAuthenticated, userHasAuthenticated] = useState(false);
-  const routing = useRoutes(routes);
+  const routing = useRoutes(routes(isAuthenticated));
 
   useEffect(() => {
     onLoad();
