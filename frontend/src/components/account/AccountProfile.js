@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 import {
   Box,
   Button,
@@ -7,76 +7,71 @@ import {
   CardHeader,
   Divider,
   Grid,
-  TextField
-} from '@material-ui/core';
-import React from 'react'
+  TextField,
+} from "@material-ui/core";
+import React from "react";
 const user = {
-  avatar: '/static/images/avatars/avatar_6.png',
-  city: 'Los Angeles',
-  country: 'USA',
-  jobTitle: 'Senior Developer',
-  name: 'Katarina Smith',
-  timezone: 'GTM-7'
+  avatar: "/static/images/avatars/avatar_6.png",
+  city: "Los Angeles",
+  country: "USA",
+  jobTitle: "Senior Developer",
+  name: "Katarina Smith",
+  timezone: "GTM-7",
 };
 
 const states = [
   {
-    value: 'Nittambuwa',
-    label: 'Nittambuwa'
+    value: "Nittambuwa",
+    label: "Nittambuwa",
   },
   {
-    value: 'Wathupitiwala',
-    label: 'Wathupitiwala'
+    value: "Wathupitiwala",
+    label: "Wathupitiwala",
   },
   {
-    value: 'Gampaha',
-    label: 'Gampaha'
+    value: "Gampaha",
+    label: "Gampaha",
   },
   {
-    value: 'Negambo',
-    label: 'Negambo'
-  }
+    value: "Negambo",
+    label: "Negambo",
+  },
 ];
 
 const AccountProfile = (props) => {
   const [values, setValues] = useState({
-    firstName: 'Katarina',
-    lastName: 'Smith',
-    email: 'demo@devias.io',
-    phone: '+94763246789',
-    state: 'Negambo',
-   
+    firstName: "Katarina",
+    lastName: "Smith",
+    email: "demo@devias.io",
+    phone: "+94763246789",
+    state: "Negambo",
   });
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      await createUser({ values });
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   const handleChange = (event) => {
     setValues({
       ...values,
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   };
 
   return (
-    <form
-      autoComplete="off"
-      noValidate
-      {...props}
-    >
+    <form autoComplete="off" noValidate {...props}>
       <Card>
-        <CardHeader
-          subheader="The information can be edited"
-          title="Profile"
-        />
+        <CardHeader subheader="The information can be edited" title="Profile" />
         <Divider />
         <CardContent>
-          <Grid
-            container
-            spacing={3}
-          >
-            <Grid
-              item
-              md={6}
-              xs={12}
-            >
+          <Grid container spacing={3}>
+            <Grid item md={6} xs={12}>
               <TextField
                 fullWidth
                 helperText="Please specify the first name"
@@ -88,11 +83,7 @@ const AccountProfile = (props) => {
                 variant="outlined"
               />
             </Grid>
-            <Grid
-              item
-              md={6}
-              xs={12}
-            >
+            <Grid item md={6} xs={12}>
               <TextField
                 fullWidth
                 label="Last name"
@@ -103,11 +94,7 @@ const AccountProfile = (props) => {
                 variant="outlined"
               />
             </Grid>
-            <Grid
-              item
-              md={6}
-              xs={12}
-            >
+            <Grid item md={6} xs={12}>
               <TextField
                 fullWidth
                 label="Email Address"
@@ -118,11 +105,7 @@ const AccountProfile = (props) => {
                 variant="outlined"
               />
             </Grid>
-            <Grid
-              item
-              md={6}
-              xs={12}
-            >
+            <Grid item md={6} xs={12}>
               <TextField
                 fullWidth
                 label="Phone Number"
@@ -132,11 +115,7 @@ const AccountProfile = (props) => {
                 variant="outlined"
               />
             </Grid>
-            <Grid
-              item
-              md={6}
-              xs={12}
-            >
+            <Grid item md={6} xs={12}>
               <TextField
                 fullWidth
                 label="Select State"
@@ -149,10 +128,7 @@ const AccountProfile = (props) => {
                 variant="outlined"
               >
                 {states.map((option) => (
-                  <option
-                    key={option.value}
-                    value={option.value}
-                  >
+                  <option key={option.value} value={option.value}>
                     {option.label}
                   </option>
                 ))}
@@ -163,24 +139,18 @@ const AccountProfile = (props) => {
         <Divider />
         <Box
           sx={{
-            display: 'flex',
-            justifyContent: 'flex-end',
-            p: 2
+            display: "flex",
+            justifyContent: "flex-end",
+            p: 2,
           }}
         >
-          <Button
-            color="primary"
-            variant="contained"
-          >
+          <Button color="primary" variant="contained">
             Save User
           </Button>
         </Box>
       </Card>
     </form>
   );
-
 };
-  
-
 
 export default AccountProfile;
