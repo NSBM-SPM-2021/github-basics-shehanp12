@@ -1,8 +1,6 @@
-# :wave: The Basics of GitHub 
 
-## 🤓 Course overview and learning outcomes 
 
-# :wave Library Management System!
+# :wave: Library Management System!
 
 This is a Full Stack app with React  with Material Ui and NodeIs  with **Serverless Stack Framework**  connected to AWS Server and DynamoDB database .
  
