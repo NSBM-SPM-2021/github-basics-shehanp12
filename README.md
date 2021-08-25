@@ -2,7 +2,7 @@
 
 # :wave: Library Management System!
 
-This is a Full Stack app with React  with Material Ui and NodeIs  with **Serverless Stack Framework**  connected to AWS Server and DynamoDB database .
+This is a Full Stack app with React  with Material Ui and NodeJs  with **Serverless Stack Framework**  connected to AWS Server and DynamoDB database .
  
 
 # The Technology Stack 
