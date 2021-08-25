@@ -16,7 +16,7 @@ This is a Full Stack app with React  with Material Ui and NodeJs  with **Serverl
  8. Serverless  Framework
 
 
-## 🖥️ The App  Architecture
+## 🖥️  The App  Architecture
 
 ![image](/Users/shehanprasanna/Desktop/a.png)
 
