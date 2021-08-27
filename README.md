@@ -18,9 +18,6 @@ This is a Full Stack app with React  with Material Ui and NodeJs  with **Serverl
 
 # 🔏  Trello
 
-![Image](images/c.png)
-
-
 1. Library Management  Backend
 https://trello.com/invite/b/9J6rfLzG/6da229bf971d4ed439de340f44608eb7/library-managment-system-backend
 
@@ -31,6 +28,28 @@ https://trello.com/invite/b/9J6rfLzG/6da229bf971d4ed439de340f44608eb7/library-ma
 # 🖥️   The App  Architecture
 
 ![Image](images/b.png)
+
+# 📙   AWS ScreenShots
+
+1. Cognito User Pool 
+![Image](images/d.png)
+
+![Image](images/e.png)
+
+
+  
+2. AWS Lambda 
+
+3. S3 Bucket
+
+
+
+
+
+
+
+
+
 
 
 
