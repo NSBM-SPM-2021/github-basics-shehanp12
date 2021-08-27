@@ -14,9 +14,21 @@ This is a Full Stack app with React  with Material Ui and NodeJs  with **Serverl
  6. Stripe Payment Gateway
  7.  Nodejs
  8. Serverless  Framework
+ 9. DynamoDB
+
+# 🔏  Trello
+
+![Image](images/c.png)
 
 
-##  🖥️  The App  Architecture
+1. Library Management  Backend
+https://trello.com/invite/b/9J6rfLzG/6da229bf971d4ed439de340f44608eb7/library-managment-system-backend
+
+2. Library Management  Frontend
+
+
+
+# 🖥️   The App  Architecture
 
 ![Image](images/b.png)
 
