@@ -36,7 +36,7 @@ const AccountProfileDetails = (props) => {
   };
 
   const createBookDetails = (bookDetails) => {
-    console.log(bookDetails)
+    console.log(bookDetails);
     return API.post("libraryManagmentSystem-prod", "libraryManagement", {
       body: bookDetails,
     });
@@ -134,7 +134,6 @@ const AccountProfileDetails = (props) => {
         </Box>
       </Card>
     </form>
-    
   );
 };
 

@@ -56,6 +56,12 @@ const AccountProfile = (props) => {
       console.log(e);
     }
   };
+  const createUser = (userDetails) => {
+    console.log(userDetails);
+    return API.post("libraryManagmentSystem-prod", "libraryManagement/user", {
+      body: userDetails,
+    });
+  };
 
   const handleChange = (event) => {
     setValues({
@@ -65,7 +71,7 @@ const AccountProfile = (props) => {
   };
 
   return (
-    <form autoComplete="off" noValidate {...props}>
+    
       <Card>
         <CardHeader subheader="The information can be edited" title="Profile" />
         <Divider />
@@ -144,7 +150,7 @@ const AccountProfile = (props) => {
             p: 2,
           }}
         >
-          <Button color="primary" variant="contained">
+          <Button color="primary" variant="contained" type="submit">
             Save User
           </Button>
         </Box>
