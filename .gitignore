@@ -2,3 +2,4 @@
 /frontend/dist/
 /frontend/.cache/
 /backend/node_modules/
+/backend/unitTesting/node_modules/
