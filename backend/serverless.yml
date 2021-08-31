@@ -20,7 +20,7 @@ provider:
   # These environment variables are made available to our functions
   # under process.env.
   environment:
-    tableName: "Books"
+    tableName: ${env:tableName}
     stripeSecretKey: ${env:STRIPE_SECRET_KEY}
     # thundra_apiKey: “626f7d15-853a-4a52-bbb1-39adfe9f88ed”
     # thundra_agent_lambda_debug_enable: true
@@ -63,11 +63,11 @@ functions:
       - http:
           path: libraryManagement/user
           method: post
-          cors:
-            origin:
-              Access-Control-Allow-Origin: '*'
-              Access-Control-Allow-Credentials: true
-            allowCredentials: false
+          cors: true
+            # origin:
+            #   Access-Control-Allow-Origin: '*'
+            #   Access-Control-Allow-Credentials: true
+            # allowCredentials: false
           authorizer:
             arn: arn:aws:cognito-idp:ap-south-1:323270932585:userpool/ap-south-1_NmptlLWJM
     # environment:
