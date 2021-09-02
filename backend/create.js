@@ -8,7 +8,7 @@ export const main = handler(async (event, context) => {
   const params = {
     TableName: "Books",
     Item: {
-      userId:  CognitoIdToken.getJwtToken(),
+      userId:  "shehanprasanna",
       bookId: uuid.v1(), // A unique uuid
       bookAuthor: data.values.bookAuthor,
       bookName: data.values.bookName,
