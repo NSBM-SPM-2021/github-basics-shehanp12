@@ -5,7 +5,7 @@ export default [
     id: uuid(),
     createdAt: '27/03/2019',
     description: 'A legendary masterpiece, this book is synonymous with difficult reading, so why not challenge yourshelf.',
-    media: '/static/images/books/war.jpeg',
+    media: '/src/static/images/books/logo.svg',
     bookName: 'War and Peace',
     bookAuthor: 'Leo Tolstoy'
   },
@@ -13,7 +13,7 @@ export default [
     id: uuid(),
     createdAt: '27/03/2019',
     description: 'One must always read a novel by this Nobel Prize winning author.',
-    media: '/static/images/books/war.jpeg',
+    media: '../../src/static/images/books/war.jpeg',
     bookName: 'Song of Solomon',
     bookAuthor: 'Toni Morrison'
   },
