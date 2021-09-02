@@ -7,14 +7,14 @@ export const main = handler(async (event, context) => {
     // 'KeyConditionExpression' defines the condition for the query
     // - 'userId = :userId': only return items with matching 'userId'
     //   partition key
-    KeyConditionExpression: "bookId = :bookId",
-    ExpressionAttributeValues: {
-      ":bookId":event.pa,
-    },
-    // Key: {
-    //   // userId:event.requestContext.identity.cognitoIdentityId, // The id of the author
-    //   noteId: event.pathParameters.id // The id of the note from the path
+    // KeyConditionExpression: "bookId = :bookId",
+    // ExpressionAttributeValues: {
+    //   ":bookId":bookId,
     // },
+    Key: {
+      // userId:event.requestContext.identity.cognitoIdentityId, // The id of the author
+      noteId: event.pathParameters.id, // The id of the note from the path
+    },
   };
 
   const result = await dynamoDb.query(params);
