@@ -8,6 +8,8 @@ import {
 import ProductListToolbar from '../../src/components/product/ProductListToolbar';
 import ProductCard from '../../src/components/product/ProductCard';
 import products from '../../src/__mocks__/products';
+// import image from "../static/images/books/"
+
 import React from 'react';
 const ProductList = () => (
   <>

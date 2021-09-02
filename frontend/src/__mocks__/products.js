@@ -1,11 +1,10 @@
 import { v4 as uuid } from 'uuid';
-
 export default [
   {
     id: uuid(),
     createdAt: '27/03/2019',
     description: 'A legendary masterpiece, this book is synonymous with difficult reading, so why not challenge yourshelf.',
-    media: '/src/static/images/books/logo.svg',
+    media: '../static/images/books/avatar_1.png',
     bookName: 'War and Peace',
     bookAuthor: 'Leo Tolstoy'
   },
@@ -13,7 +12,7 @@ export default [
     id: uuid(),
     createdAt: '27/03/2019',
     description: 'One must always read a novel by this Nobel Prize winning author.',
-    media: '../../src/static/images/books/war.jpeg',
+    media: '../../../public/static/images/books/avatar_1.png',
     bookName: 'Song of Solomon',
     bookAuthor: 'Toni Morrison'
   },
@@ -21,7 +20,7 @@ export default [
     id: uuid(),
     createdAt: '03/04/2019',
     description: 'Slack is a cloud-based set of team collaboration tools and services, founded by Stewart Butterfield.',
-    media: '/static/images/products/product_3.png',
+    media: '../../../public/static/images/books/avatar_1.png',
     title: 'Slack',
     totalDownloads: '857'
   },
@@ -29,7 +28,7 @@ export default [
     id: uuid(),
     createdAt: '04/04/2019',
     description: 'Lyft is an on-demand transportation company based in San Francisco, California.',
-    media: '/static/images/products/product_4.png',
+    media: '../../../public/static/images/books/avatar_1.png',
     title: 'Lyft',
     totalDownloads: '406'
   },
@@ -37,7 +36,7 @@ export default [
     id: uuid(),
     createdAt: '04/04/2019',
     description: 'GitHub is a web-based hosting service for version control of code using Git.',
-    media: '/static/images/products/product_5.png',
+    media: '../../../public/static/images/books/avatar_1.png',
     title: 'GitHub',
     totalDownloads: '835'
   },
@@ -45,7 +44,7 @@ export default [
     id: uuid(),
     createdAt: '04/04/2019',
     description: 'Squarespace provides software as a service for website building and hosting. Headquartered in NYC.',
-    media: '/static/images/products/product_6.png',
+    media: '../../../public/static/images/books/avatar_1.png',
     title: 'Squarespace',
     totalDownloads: '835'
   }
