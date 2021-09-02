@@ -95,7 +95,13 @@ functions:
           path: libraryManagement
           method: get
           cors: true
-          authorizer: aws_iam
+            # origin:
+            #   Access-Control-Allow-Origin: '*'
+            #   Access-Control-Allow-Credentials: true
+            # allowCredentials: false
+          authorizer:
+            arn: arn:aws:cognito-idp:ap-south-1:323270932585:userpool/ap-south-1_NmptlLWJM
+
 
   update:
     # Defines an HTTP API endpoint that calls the main function in update.js
