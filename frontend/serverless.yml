@@ -1,7 +1,7 @@
 org: shehanp12
-name: notesapp
-app: notesapp
-service: notesapp
+name: librarymanagment
+app: frontend
+service: libraryManagment
 component: website
 
 inputs:

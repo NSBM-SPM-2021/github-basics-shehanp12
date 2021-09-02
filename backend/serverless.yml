@@ -1,3 +1,5 @@
+org: shehanp12
+app: backend
 service: libraryManagmentSystem
 # Create an optimized package for our functions
 package:
