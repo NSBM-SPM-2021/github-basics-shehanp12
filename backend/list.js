@@ -8,8 +8,12 @@ export const main = handler(async (event, context) => {
     // - 'userId = :userId': only return items with matching 'userId'
     //   partition key
     KeyConditionExpression: "bookId = :bookId",
-    // ExpressionAttributeValues: {
-    //   ":bookId":event.requestContext.identity.cognitoIdentityId,
+    ExpressionAttributeValues: {
+      ":bookId":event.pa,
+    },
+    // Key: {
+    //   // userId:event.requestContext.identity.cognitoIdentityId, // The id of the author
+    //   noteId: event.pathParameters.id // The id of the note from the path
     // },
   };
 

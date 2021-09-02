@@ -114,12 +114,6 @@
               "LogGroupName": "/aws/lambda/libraryManagmentSystem-prod-createUser"
             }
           },
-          "GetLogGroup": {
-            "Type": "AWS::Logs::LogGroup",
-            "Properties": {
-              "LogGroupName": "/aws/lambda/libraryManagmentSystem-prod-get"
-            }
-          },
           "ListLogGroup": {
             "Type": "AWS::Logs::LogGroup",
             "Properties": {
@@ -231,7 +225,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/libraryManagmentSystem/prod/1630597192419-2021-09-02T15:39:52.419Z/create.zip"
+                "S3Key": "serverless/libraryManagmentSystem/prod/1630604893540-2021-09-02T17:48:13.540Z/create.zip"
               },
               "Handler": "create.main",
               "Runtime": "nodejs12.x",
@@ -261,7 +255,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/libraryManagmentSystem/prod/1630597192419-2021-09-02T15:39:52.419Z/createUser.zip"
+                "S3Key": "serverless/libraryManagmentSystem/prod/1630604893540-2021-09-02T17:48:13.540Z/createUser.zip"
               },
               "Handler": "createUser.main",
               "Runtime": "nodejs12.x",
@@ -284,36 +278,6 @@
               "CreateUserLogGroup"
             ]
           },
-          "GetLambdaFunction": {
-            "Type": "AWS::Lambda::Function",
-            "Properties": {
-              "Code": {
-                "S3Bucket": {
-                  "Ref": "ServerlessDeploymentBucket"
-                },
-                "S3Key": "serverless/libraryManagmentSystem/prod/1630597192419-2021-09-02T15:39:52.419Z/get.zip"
-              },
-              "Handler": "get.main",
-              "Runtime": "nodejs12.x",
-              "FunctionName": "libraryManagmentSystem-prod-get",
-              "MemorySize": 1024,
-              "Timeout": 6,
-              "Environment": {
-                "Variables": {
-                  "tableName": "Books"
-                }
-              },
-              "Role": {
-                "Fn::GetAtt": [
-                  "IamRoleLambdaExecution",
-                  "Arn"
-                ]
-              }
-            },
-            "DependsOn": [
-              "GetLogGroup"
-            ]
-          },
           "ListLambdaFunction": {
             "Type": "AWS::Lambda::Function",
             "Properties": {
@@ -321,7 +285,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/libraryManagmentSystem/prod/1630597192419-2021-09-02T15:39:52.419Z/list.zip"
+                "S3Key": "serverless/libraryManagmentSystem/prod/1630604893540-2021-09-02T17:48:13.540Z/list.zip"
               },
               "Handler": "list.main",
               "Runtime": "nodejs12.x",
@@ -351,7 +315,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/libraryManagmentSystem/prod/1630597192419-2021-09-02T15:39:52.419Z/update.zip"
+                "S3Key": "serverless/libraryManagmentSystem/prod/1630604893540-2021-09-02T17:48:13.540Z/update.zip"
               },
               "Handler": "update.main",
               "Runtime": "nodejs12.x",
@@ -381,7 +345,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/libraryManagmentSystem/prod/1630597192419-2021-09-02T15:39:52.419Z/delete.zip"
+                "S3Key": "serverless/libraryManagmentSystem/prod/1630604893540-2021-09-02T17:48:13.540Z/delete.zip"
               },
               "Handler": "delete.main",
               "Runtime": "nodejs12.x",
@@ -411,7 +375,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/libraryManagmentSystem/prod/1630597192419-2021-09-02T15:39:52.419Z/billing.zip"
+                "S3Key": "serverless/libraryManagmentSystem/prod/1630604893540-2021-09-02T17:48:13.540Z/billing.zip"
               },
               "Handler": "billing.main",
               "Runtime": "nodejs12.x",
@@ -434,74 +398,64 @@
               "BillingLogGroup"
             ]
           },
-          "GetLambdaVersionATK0xck3LNdskKm7VmlkxZvbBJmXzrFjFGbbDSFk": {
-            "Type": "AWS::Lambda::Version",
-            "DeletionPolicy": "Retain",
-            "Properties": {
-              "FunctionName": {
-                "Ref": "GetLambdaFunction"
-              },
-              "CodeSha256": "Z8y2gdJXN60gAbcZ8ryvV3VAAQJfX+0yTiN9MnrTirg="
-            }
-          },
-          "ListLambdaVersion4yufddpJOJhFFH1Z68rCaQfxnj2gZyeO1IPXOs3o": {
+          "ListLambdaVersionJLVar52t45xM6ObbcmXIMQa5BCexcwTlgUmdJipA": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ListLambdaFunction"
               },
-              "CodeSha256": "bYHEfUyYj3tDxqoMjr2FkYYE7aKMiZvwphF6a0l/2Bo="
+              "CodeSha256": "nfN+VGaWww1yITpCs0HBBB8aZAqRWl3AGhYNWuDBksg="
             }
           },
-          "UpdateLambdaVersionu1O1N2LgMQ93kH793K2jeYaocK6xKvwWsIreOG7U7Ek": {
+          "UpdateLambdaVersionG0oPGn4x8o5pOx3EbysPTMHX6zoNQy6kUAiqXBQA6K4": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "UpdateLambdaFunction"
               },
-              "CodeSha256": "3Zr9qK/Sazn80qxYmKy+1l9JIuv6gTmd3I3aCHi722A="
+              "CodeSha256": "npRLE122zfve9ZU6Meg6gqCXVul19ECgiL6maeDAHRw="
             }
           },
-          "DeleteLambdaVersion15qrAPTvSIA22xV9XkfKNutAiVH1RMyFWk7x5XZssc": {
+          "DeleteLambdaVersionSKavasGBSgpLM5VhUldq95TzZZ09wsyOnaYLpi1U6FU": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "DeleteLambdaFunction"
               },
-              "CodeSha256": "3j+SokV1nZwhbhupEiLCnIK8AWguUIRrFxR7w/KmxRE="
+              "CodeSha256": "ZyG18BwrA2NEMEvH6PVgGbnjuVNuKe0cXDpkkuWXHIg="
             }
           },
-          "CreateLambdaVersionjki5hhrLzWrStlP71xhuW16xbDvnbK3lQo4Gkov8": {
+          "CreateLambdaVersionk6ZNrQArCQ7dhCD93Fd93flOkH3PdTm7dQIOReljd5M": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreateLambdaFunction"
               },
-              "CodeSha256": "Jxd1p3X6olO9KG4rV6VCC76iTHQaljdK+FdA2UJXvTc="
+              "CodeSha256": "/P8ZO/ZpOAwrToIpGE3mNlaqEfBAvJeee0OCaQaMrDg="
             }
           },
-          "CreateUserLambdaVersionV0yiu5sw64U5D1ggj4q93h9OSqfTmowivmBP9ErgFc": {
+          "CreateUserLambdaVersionGyWx0nIOSCTlDzylCnmab2A3azd2T9B4HJ1xJhl3o": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreateUserLambdaFunction"
               },
-              "CodeSha256": "1xgDDRJYVtcIy9E3Mx5Wt2DB32Z1C7ivpqkjScy0DVg="
+              "CodeSha256": "WKJwNORiVf7lS+Pq3lzdfCP5XC+PLWYCfsOSV9U+qOc="
             }
           },
-          "BillingLambdaVersion3rKs198l3hfbx3J2FS8jQUyg6KSE9zPMeM8cBykRLFo": {
+          "BillingLambdaVersionZZ7B5yzWGWysZR4SfXs9C3rgWg8qgjgffxgaKTRQ": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "BillingLambdaFunction"
               },
-              "CodeSha256": "nLJUyK5XgFiCgiNgm92WoZEwV6d1tNoeOg36U8QlpPM="
+              "CodeSha256": "3N889aERKpvug6oOpVMDpgXchbOiRx8KKi0KeEP4gAw="
             }
           },
           "ApiGatewayRestApi": {
@@ -599,7 +553,7 @@
                     "ResponseParameters": {
                       "method.response.header.Access-Control-Allow-Origin": "'*'",
                       "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
-                      "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET,POST'"
+                      "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'"
                     },
                     "ResponseTemplates": {
                       "application/json": "#set($origin = $input.params(\"Origin\"))\n#if($origin == \"\") #set($origin = $input.params(\"origin\")) #end\n#if($origin.matches(\".+\")) #set($context.responseOverride.header.Access-Control-Allow-Origin = $origin) #end"
@@ -689,7 +643,7 @@
                     "ResponseParameters": {
                       "method.response.header.Access-Control-Allow-Origin": "'*'",
                       "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
-                      "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,DELETE,PUT,GET'"
+                      "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,DELETE,PUT'"
                     },
                     "ResponseTemplates": {
                       "application/json": "#set($origin = $input.params(\"Origin\"))\n#if($origin == \"\") #set($origin = $input.params(\"origin\")) #end\n#if($origin.matches(\".+\")) #set($context.responseOverride.header.Access-Control-Allow-Origin = $origin) #end"
@@ -762,10 +716,7 @@
                 "Ref": "ApiGatewayRestApi"
               },
               "ApiKeyRequired": false,
-              "AuthorizationType": "COGNITO_USER_POOLS",
-              "AuthorizerId": {
-                "Ref": "1UnderscoreNmptlLWJMApiGatewayAuthorizer"
-              },
+              "AuthorizationType": "AWS_IAM",
               "Integration": {
                 "IntegrationHttpMethod": "POST",
                 "Type": "AWS_PROXY",
@@ -795,7 +746,9 @@
               },
               "MethodResponses": []
             },
-            "DependsOn": "1UnderscoreNmptlLWJMApiGatewayAuthorizer"
+            "DependsOn": [
+              "CreateLambdaPermissionApiGateway"
+            ]
           },
           "ApiGatewayMethodLibrarymanagementUserPost": {
             "Type": "AWS::ApiGateway::Method",
@@ -843,52 +796,6 @@
               "MethodResponses": []
             },
             "DependsOn": "1UnderscoreNmptlLWJMApiGatewayAuthorizer"
-          },
-          "ApiGatewayMethodLibrarymanagementIdVarGet": {
-            "Type": "AWS::ApiGateway::Method",
-            "Properties": {
-              "HttpMethod": "GET",
-              "RequestParameters": {},
-              "ResourceId": {
-                "Ref": "ApiGatewayResourceLibrarymanagementIdVar"
-              },
-              "RestApiId": {
-                "Ref": "ApiGatewayRestApi"
-              },
-              "ApiKeyRequired": false,
-              "AuthorizationType": "AWS_IAM",
-              "Integration": {
-                "IntegrationHttpMethod": "POST",
-                "Type": "AWS_PROXY",
-                "Uri": {
-                  "Fn::Join": [
-                    "",
-                    [
-                      "arn:",
-                      {
-                        "Ref": "AWS::Partition"
-                      },
-                      ":apigateway:",
-                      {
-                        "Ref": "AWS::Region"
-                      },
-                      ":lambda:path/2015-03-31/functions/",
-                      {
-                        "Fn::GetAtt": [
-                          "GetLambdaFunction",
-                          "Arn"
-                        ]
-                      },
-                      "/invocations"
-                    ]
-                  ]
-                }
-              },
-              "MethodResponses": []
-            },
-            "DependsOn": [
-              "GetLambdaPermissionApiGateway"
-            ]
           },
           "ApiGatewayMethodLibrarymanagementGet": {
             "Type": "AWS::ApiGateway::Method",
@@ -1090,7 +997,7 @@
               ]
             }
           },
-          "ApiGatewayDeployment1630597180755": {
+          "ApiGatewayDeployment1630604870639": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -1105,7 +1012,6 @@
               "ApiGatewayMethodBillingOptions",
               "ApiGatewayMethodLibrarymanagementPost",
               "ApiGatewayMethodLibrarymanagementUserPost",
-              "ApiGatewayMethodLibrarymanagementIdVarGet",
               "ApiGatewayMethodLibrarymanagementGet",
               "ApiGatewayMethodLibrarymanagementIdVarPut",
               "ApiGatewayMethodLibrarymanagementIdVarDelete",
@@ -1155,43 +1061,6 @@
               "FunctionName": {
                 "Fn::GetAtt": [
                   "CreateUserLambdaFunction",
-                  "Arn"
-                ]
-              },
-              "Action": "lambda:InvokeFunction",
-              "Principal": "apigateway.amazonaws.com",
-              "SourceArn": {
-                "Fn::Join": [
-                  "",
-                  [
-                    "arn:",
-                    {
-                      "Ref": "AWS::Partition"
-                    },
-                    ":execute-api:",
-                    {
-                      "Ref": "AWS::Region"
-                    },
-                    ":",
-                    {
-                      "Ref": "AWS::AccountId"
-                    },
-                    ":",
-                    {
-                      "Ref": "ApiGatewayRestApi"
-                    },
-                    "/*/*"
-                  ]
-                ]
-              }
-            }
-          },
-          "GetLambdaPermissionApiGateway": {
-            "Type": "AWS::Lambda::Permission",
-            "Properties": {
-              "FunctionName": {
-                "Fn::GetAtt": [
-                  "GetLambdaFunction",
                   "Arn"
                 ]
               },
@@ -1407,19 +1276,10 @@
               "Name": "sls-libraryManagmentSystem-prod-ServerlessDeploymentBucketName"
             }
           },
-          "GetLambdaFunctionQualifiedArn": {
-            "Description": "Current Lambda function version",
-            "Value": {
-              "Ref": "GetLambdaVersionATK0xck3LNdskKm7VmlkxZvbBJmXzrFjFGbbDSFk"
-            },
-            "Export": {
-              "Name": "sls-libraryManagmentSystem-prod-GetLambdaFunctionQualifiedArn"
-            }
-          },
           "ListLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ListLambdaVersion4yufddpJOJhFFH1Z68rCaQfxnj2gZyeO1IPXOs3o"
+              "Ref": "ListLambdaVersionJLVar52t45xM6ObbcmXIMQa5BCexcwTlgUmdJipA"
             },
             "Export": {
               "Name": "sls-libraryManagmentSystem-prod-ListLambdaFunctionQualifiedArn"
@@ -1428,7 +1288,7 @@
           "UpdateLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "UpdateLambdaVersionu1O1N2LgMQ93kH793K2jeYaocK6xKvwWsIreOG7U7Ek"
+              "Ref": "UpdateLambdaVersionG0oPGn4x8o5pOx3EbysPTMHX6zoNQy6kUAiqXBQA6K4"
             },
             "Export": {
               "Name": "sls-libraryManagmentSystem-prod-UpdateLambdaFunctionQualifiedArn"
@@ -1437,7 +1297,7 @@
           "DeleteLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "DeleteLambdaVersion15qrAPTvSIA22xV9XkfKNutAiVH1RMyFWk7x5XZssc"
+              "Ref": "DeleteLambdaVersionSKavasGBSgpLM5VhUldq95TzZZ09wsyOnaYLpi1U6FU"
             },
             "Export": {
               "Name": "sls-libraryManagmentSystem-prod-DeleteLambdaFunctionQualifiedArn"
@@ -1446,7 +1306,7 @@
           "CreateLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreateLambdaVersionjki5hhrLzWrStlP71xhuW16xbDvnbK3lQo4Gkov8"
+              "Ref": "CreateLambdaVersionk6ZNrQArCQ7dhCD93Fd93flOkH3PdTm7dQIOReljd5M"
             },
             "Export": {
               "Name": "sls-libraryManagmentSystem-prod-CreateLambdaFunctionQualifiedArn"
@@ -1455,7 +1315,7 @@
           "CreateUserLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreateUserLambdaVersionV0yiu5sw64U5D1ggj4q93h9OSqfTmowivmBP9ErgFc"
+              "Ref": "CreateUserLambdaVersionGyWx0nIOSCTlDzylCnmab2A3azd2T9B4HJ1xJhl3o"
             },
             "Export": {
               "Name": "sls-libraryManagmentSystem-prod-CreateUserLambdaFunctionQualifiedArn"
@@ -1464,7 +1324,7 @@
           "BillingLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "BillingLambdaVersion3rKs198l3hfbx3J2FS8jQUyg6KSE9zPMeM8cBykRLFo"
+              "Ref": "BillingLambdaVersionZZ7B5yzWGWysZR4SfXs9C3rgWg8qgjgffxgaKTRQ"
             },
             "Export": {
               "Name": "sls-libraryManagmentSystem-prod-BillingLambdaFunctionQualifiedArn"
@@ -1613,11 +1473,10 @@
               "path": "libraryManagement",
               "method": "post",
               "cors": {
-                "origin": {
-                  "Access-Control-Allow-Origin": "*",
-                  "Access-Control-Allow-Credentials": true
-                },
-                "allowCredentials": false,
+                "origins": [
+                  "*"
+                ],
+                "origin": "*",
                 "methods": [
                   "OPTIONS",
                   "POST"
@@ -1629,15 +1488,13 @@
                   "X-Api-Key",
                   "X-Amz-Security-Token",
                   "X-Amz-User-Agent"
-                ]
+                ],
+                "allowCredentials": false
               },
               "authorizer": {
-                "name": "1_NmptlLWJM",
-                "arn": "arn:aws:cognito-idp:ap-south-1:323270932585:userpool/ap-south-1_NmptlLWJM",
+                "type": "AWS_IAM",
                 "managedExternally": false,
-                "resultTtlInSeconds": 300,
-                "identitySource": "method.request.header.Authorization",
-                "claims": []
+                "identitySource": "method.request.header.Authorization"
               },
               "integration": "AWS_PROXY"
             }
@@ -1651,7 +1508,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "CreateLambdaVersionjki5hhrLzWrStlP71xhuW16xbDvnbK3lQo4Gkov8"
+        "versionLogicalId": "CreateLambdaVersionk6ZNrQArCQ7dhCD93Fd93flOkH3PdTm7dQIOReljd5M"
       },
       "createUser": {
         "handler": "createUser.main",
@@ -1699,52 +1556,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "CreateUserLambdaVersionV0yiu5sw64U5D1ggj4q93h9OSqfTmowivmBP9ErgFc"
-      },
-      "get": {
-        "handler": "get.main",
-        "events": [
-          {
-            "http": {
-              "path": "libraryManagement/{id}",
-              "method": "get",
-              "cors": {
-                "origins": [
-                  "*"
-                ],
-                "origin": "*",
-                "methods": [
-                  "OPTIONS",
-                  "GET"
-                ],
-                "headers": [
-                  "Content-Type",
-                  "X-Amz-Date",
-                  "Authorization",
-                  "X-Api-Key",
-                  "X-Amz-Security-Token",
-                  "X-Amz-User-Agent"
-                ],
-                "allowCredentials": false
-              },
-              "authorizer": {
-                "type": "AWS_IAM",
-                "managedExternally": false,
-                "identitySource": "method.request.header.Authorization"
-              },
-              "integration": "AWS_PROXY"
-            }
-          }
-        ],
-        "name": "libraryManagmentSystem-prod-get",
-        "package": {
-          "artifact": ".serverless/get.zip"
-        },
-        "memory": 1024,
-        "timeout": 6,
-        "runtime": "nodejs12.x",
-        "vpc": {},
-        "versionLogicalId": "GetLambdaVersionATK0xck3LNdskKm7VmlkxZvbBJmXzrFjFGbbDSFk"
+        "versionLogicalId": "CreateUserLambdaVersionGyWx0nIOSCTlDzylCnmab2A3azd2T9B4HJ1xJhl3o"
       },
       "list": {
         "handler": "list.main",
@@ -1753,25 +1565,6 @@
             "http": {
               "path": "libraryManagement",
               "method": "get",
-              "cors": {
-                "origins": [
-                  "*"
-                ],
-                "origin": "*",
-                "methods": [
-                  "OPTIONS",
-                  "GET"
-                ],
-                "headers": [
-                  "Content-Type",
-                  "X-Amz-Date",
-                  "Authorization",
-                  "X-Api-Key",
-                  "X-Amz-Security-Token",
-                  "X-Amz-User-Agent"
-                ],
-                "allowCredentials": false
-              },
               "authorizer": {
                 "name": "1_NmptlLWJM",
                 "arn": "arn:aws:cognito-idp:ap-south-1:323270932585:userpool/ap-south-1_NmptlLWJM",
@@ -1792,7 +1585,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "ListLambdaVersion4yufddpJOJhFFH1Z68rCaQfxnj2gZyeO1IPXOs3o"
+        "versionLogicalId": "ListLambdaVersionJLVar52t45xM6ObbcmXIMQa5BCexcwTlgUmdJipA"
       },
       "update": {
         "handler": "update.main",
@@ -1837,7 +1630,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "UpdateLambdaVersionu1O1N2LgMQ93kH793K2jeYaocK6xKvwWsIreOG7U7Ek"
+        "versionLogicalId": "UpdateLambdaVersionG0oPGn4x8o5pOx3EbysPTMHX6zoNQy6kUAiqXBQA6K4"
       },
       "delete": {
         "handler": "delete.main",
@@ -1882,7 +1675,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "DeleteLambdaVersion15qrAPTvSIA22xV9XkfKNutAiVH1RMyFWk7x5XZssc"
+        "versionLogicalId": "DeleteLambdaVersionSKavasGBSgpLM5VhUldq95TzZZ09wsyOnaYLpi1U6FU"
       },
       "billing": {
         "handler": "billing.main",
@@ -1927,7 +1720,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "BillingLambdaVersion3rKs198l3hfbx3J2FS8jQUyg6KSE9zPMeM8cBykRLFo"
+        "versionLogicalId": "BillingLambdaVersionZZ7B5yzWGWysZR4SfXs9C3rgWg8qgjgffxgaKTRQ"
       }
     },
     "resources": {
@@ -1969,7 +1762,7 @@
       },
       "package": {
         "individually": true,
-        "artifactDirectoryName": "serverless/libraryManagmentSystem/prod/1630597192419-2021-09-02T15:39:52.419Z"
+        "artifactDirectoryName": "serverless/libraryManagmentSystem/prod/1630604893540-2021-09-02T17:48:13.540Z"
       },
       "plugins": {
         "$ref": "$[\"service\"][\"plugins\"]"
@@ -1989,7 +1782,7 @@
   },
   "package": {
     "individually": true,
-    "artifactDirectoryName": "serverless/libraryManagmentSystem/prod/1630597192419-2021-09-02T15:39:52.419Z",
+    "artifactDirectoryName": "serverless/libraryManagmentSystem/prod/1630604893540-2021-09-02T17:48:13.540Z",
     "artifact": ""
   }
 }
