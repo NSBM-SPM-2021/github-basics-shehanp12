@@ -53,7 +53,10 @@ https://trello.com/invite/b/9J6rfLzG/6da229bf971d4ed439de340f44608eb7/library-ma
 
 # 📙   Unit Testing
 
-1. I have used Jest with Serverlets Framework to test my backend functionalities.
+* I have used Jest with Serverlets Framework to test my backend functionalities.
+
+![Image](images/i.png)
+
 
 ![Image](images/h.png)
 
@@ -73,7 +76,7 @@ https://trello.com/invite/b/9J6rfLzG/6da229bf971d4ed439de340f44608eb7/library-ma
 
 
 ## 📚  Resources 
-* [A short video explaining what GitHub is](https://www.youtube.com/watch?v=w3jLJU7DT5E&feature=youtu.be) 
+* [React](https://www.youtube.com/watch?v=w3jLJU7DT5E&feature=youtu.be) 
 * [Git and GitHub learning resources](https://docs.github.com/en/github/getting-started-with-github/git-and-github-learning-resources) 
 * [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
 * [How to use GitHub branches](https://www.youtube.com/watch?v=H5GJfcp3p4Q&feature=youtu.be)
