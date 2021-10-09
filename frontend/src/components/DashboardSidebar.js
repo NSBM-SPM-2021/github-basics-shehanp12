@@ -13,6 +13,7 @@ import {
   List,
   Typography,
 } from "@material-ui/core";
+import a from "../static/images/avatars/a.png"
 import {
   AlertCircle as AlertCircleIcon,
   BarChart as BarChartIcon,
@@ -26,7 +27,7 @@ import {
 import NavItem from "./NavItem";
 
 const user = {
-  avatar: "./static/images/avatars/a.png",
+  avatar: a,
   jobTitle: "Librarian",
   name: "Shehan Prasanna",
 };

@@ -1,4 +1,4 @@
-import { Doughnut } from 'react-chartjs-2';
+import { Doughnut } from "react-chartjs-2";
 import {
   Box,
   Card,
@@ -7,12 +7,14 @@ import {
   Divider,
   Typography,
   colors,
-  useTheme
-} from '@material-ui/core';
-import LaptopMacIcon from '@material-ui/icons/LaptopMac';
-import PhoneIcon from '@material-ui/icons/Phone';
-import TabletIcon from '@material-ui/icons/Tablet';
-import React from 'react';
+  useTheme,
+} from "@material-ui/core";
+
+import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
+import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
+import BookIcon from "@mui/icons-material/Book";
+import TabletIcon from "@material-ui/icons/Tablet";
+import React from "react";
 const TrafficByDevice = (props) => {
   const theme = useTheme();
 
@@ -23,14 +25,14 @@ const TrafficByDevice = (props) => {
         backgroundColor: [
           colors.indigo[500],
           colors.red[600],
-          colors.orange[600]
+          colors.orange[600],
         ],
         borderWidth: 8,
         borderColor: colors.common.white,
-        hoverBorderColor: colors.common.white
-      }
+        hoverBorderColor: colors.common.white,
+      },
     ],
-    labels: ['Desktop', 'Tablet', 'Mobile']
+    labels: ["Horror", "Fantasy", "Fiction"],
   };
 
   const options = {
@@ -38,7 +40,7 @@ const TrafficByDevice = (props) => {
     cutoutPercentage: 80,
     layout: { padding: 0 },
     legend: {
-      display: false
+      display: false,
     },
     maintainAspectRatio: false,
     responsive: true,
@@ -50,81 +52,66 @@ const TrafficByDevice = (props) => {
       enabled: true,
       footerFontColor: theme.palette.text.secondary,
       intersect: false,
-      mode: 'index',
-      titleFontColor: theme.palette.text.primary
-    }
+      mode: "index",
+      titleFontColor: theme.palette.text.primary,
+    },
   };
 
   const devices = [
     {
-      title: 'Desktop',
+      title: "Horror",
       value: 63,
-      icon: LaptopMacIcon,
-      color: colors.indigo[500]
+      icon: BookIcon,
+      color: colors.indigo[500],
     },
     {
-      title: 'Tablet',
+      title: "Fantasy",
       value: 15,
-      icon: TabletIcon,
-      color: colors.red[600]
+      icon: LibraryBooksIcon,
+      color: colors.red[600],
     },
     {
-      title: 'Mobile',
+      title: "Fiction",
       value: 23,
-      icon: PhoneIcon,
-      color: colors.orange[600]
-    }
+      icon: LocalLibraryIcon,
+      color: colors.orange[600],
+    },
   ];
 
   return (
     <Card {...props}>
-      <CardHeader title="Traffic by Device" />
+      <CardHeader title="Books by Category" />
       <Divider />
       <CardContent>
         <Box
           sx={{
             height: 300,
-            position: 'relative'
+            position: "relative",
           }}
         >
-          <Doughnut
-            data={data}
-            options={options}
-          />
+          <Doughnut data={data} options={options} />
         </Box>
         <Box
           sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            pt: 2
+            display: "flex",
+            justifyContent: "center",
+            pt: 2,
           }}
         >
-          {devices.map(({
-            color,
-            icon: Icon,
-            title,
-            value
-          }) => (
+          {devices.map(({ color, icon: Icon, title, value }) => (
             <Box
               key={title}
               sx={{
                 p: 1,
-                textAlign: 'center'
+                textAlign: "center",
               }}
             >
               <Icon color="action" />
-              <Typography
-                color="textPrimary"
-                variant="body1"
-              >
+              <Typography color="textPrimary" variant="body1">
                 {title}
               </Typography>
-              <Typography
-                style={{ color }}
-                variant="h2"
-              >
-                {value}
-                %
+              <Typography style={{ color }} variant="h2">
+                {value}%
               </Typography>
             </Box>
           ))}
