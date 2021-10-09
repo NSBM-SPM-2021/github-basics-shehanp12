@@ -1,3 +1,4 @@
+///static/images/avatars/a.png
 import React from "react";
 import { useEffect } from "react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
@@ -25,9 +26,9 @@ import {
 import NavItem from "./NavItem";
 
 const user = {
-  avatar: "/static/images/avatars/avatar_6.png",
-  jobTitle: "Senior Developer",
-  name: "Katarina Smith",
+  avatar: "./static/images/avatars/a.png",
+  jobTitle: "Librarian",
+  name: "Shehan Prasanna",
 };
 
 const items = [
