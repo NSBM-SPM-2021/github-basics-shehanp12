@@ -8,27 +8,18 @@ plugins:
   - serverless-bundle # Package our functions with Webpack
   - serverless-offline
   - serverless-dotenv-plugin # Load .env as environment variables
-  # - serverless-plugin-thundra
   - serverless-webpack
-# custom:
-#   webpack:
-#     keepOutputDirectory: true
+
 provider:
   name: aws
   runtime: nodejs12.x
   stage: prod
   region: us-east-2
-  # timeout: 30
-  # These environment variables are made available to our functions
-  # under process.env.
+ 
   environment:
     tableName: ${env:tableName}
     stripeSecretKey: ${env:STRIPE_SECRET_KEY}
-    # thundra_apiKey: “626f7d15-853a-4a52-bbb1-39adfe9f88ed”
-    # thundra_agent_lambda_debug_enable: true
-    # thundra_agent_lambda_debugger_auth_token: “BaNquTzrYbOQ+U0bwyXgME5xk/yV9K8EF6pwMfKEwiY=”
-  # ‘iamRoleStatements’ defines the permission policy for the Lambda function.
-  # In this case Lambda functions are granted with permissions to access DynamoDB.
+   
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -42,9 +33,7 @@ provider:
         - dynamodb:AmazonDynamoDBFullAccess
       Resource: "arn:aws:dynamodb:us-east-1:*:*"
 functions:
-  # Defines an HTTP API endpoint that calls the main function in create.js
-  # - path: url path is /notes
-  # - method: POST request
+  
   create:
     handler: create.main
     events:
@@ -66,16 +55,10 @@ functions:
           path: libraryManagement/user
           method: post
           cors: true
-            # origin:
-            #   Access-Control-Allow-Origin: '*'
-            #   Access-Control-Allow-Credentials: true
-            # allowCredentials: false
+           
           authorizer:
             arn: arn:aws:cognito-idp:ap-south-1:323270932585:userpool/ap-south-1_NmptlLWJM
-    # environment:
-    #   thundra_apiKey: "626f7d15-853a-4a52-bbb1-39adfe9f88ed"
-    #   thundra_agent_lambda_debug_enable: true
-    #   thundra_agent_lambda_debugger_auth_token: "BaNquTzrYbOQ+U0bwyXgME5xk/yV9K8EF6pwMfKEwiY="
+   
   get:
     # Defines an HTTP API endpoint that calls the main function in get.js
     # - path: url path is /notes/{id}

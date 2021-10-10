@@ -18,16 +18,16 @@ const ProductListToolbar = (props) => (
       }}
     >
       <Button>
-        Import
+        Update
       </Button>
       <Button sx={{ mx: 1 }}>
-        Export
+      Delete 
       </Button>
       <Button
         color="primary"
         variant="contained"
       >
-        Add product
+        Add book
       </Button>
     </Box>
     <Box sx={{ mt: 3 }}>
@@ -48,7 +48,7 @@ const ProductListToolbar = (props) => (
                   </InputAdornment>
                 )
               }}
-              placeholder="Search product"
+              placeholder="Search books"
               variant="outlined"
             />
           </Box>

@@ -27,7 +27,7 @@ const CustomerListToolbar = (props) => (
         color="primary"
         variant="contained"
       >
-        Add customer
+        Add Users
       </Button>
     </Box>
     <Box sx={{ mt: 3 }}>

@@ -41,12 +41,12 @@ const items = [
   {
     href: "/app/customers",
     icon: UsersIcon,
-    title: "Customers",
+    title: "Library Users",
   },
   {
     href: "/app/products",
     icon: ShoppingBagIcon,
-    title: "Products",
+    title: "Books",
   },
   {
     href: "/app/account",

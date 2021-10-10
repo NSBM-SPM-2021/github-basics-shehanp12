@@ -13,7 +13,10 @@ import {
   ListItemText,
 } from "@material-ui/core";
 import book1 from "../../static/images/books/1.jpeg";
-
+import book2 from "../../static/images/books/2.jpeg";
+import book3 from "../../static/images/books/3.jpeg";
+import book4 from "../../static/images/books/4.jpeg";
+import book5 from "../../static/images/books/5.jpeg";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import React from "react";
@@ -26,26 +29,26 @@ const products = [
   },
   {
     id: uuid(),
-    name: "Medium Corporation",
-    imageUrl: "/static/images/products/product_2.png",
+    name: "Animal",
+    imageUrl: book2,
     updatedAt: moment().subtract(2, "hours"),
   },
   {
     id: uuid(),
-    name: "Slack",
-    imageUrl: "/static/images/products/product_3.png",
+    name: "Let Me Tell You What I Mean",
+    imageUrl: book3,
     updatedAt: moment().subtract(3, "hours"),
   },
   {
     id: uuid(),
-    name: "Lyft",
-    imageUrl: "/static/images/products/product_4.png",
+    name: "Second Place",
+    imageUrl: book4,
     updatedAt: moment().subtract(5, "hours"),
   },
   {
     id: uuid(),
-    name: "GitHub",
-    imageUrl: "/static/images/products/product_5.png",
+    name: "The Push",
+    imageUrl: book5,
     updatedAt: moment().subtract(9, "hours"),
   },
 ];
