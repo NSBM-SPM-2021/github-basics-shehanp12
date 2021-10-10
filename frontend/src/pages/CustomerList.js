@@ -7,7 +7,7 @@ import React from 'react';
 const CustomerList = () => (
   <>
     <Helmet>
-      <title>Customers | Material Kit</title>
+      <title> Users | Material Kit</title>
     </Helmet>
     <Box
       sx={{

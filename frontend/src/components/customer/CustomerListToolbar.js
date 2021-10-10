@@ -48,7 +48,7 @@ const CustomerListToolbar = (props) => (
                   </InputAdornment>
                 )
               }}
-              placeholder="Search customer"
+              placeholder="Search Users"
               variant="outlined"
             />
           </Box>

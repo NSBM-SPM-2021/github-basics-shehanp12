@@ -12,7 +12,7 @@ import React from 'react';
 const ProductList = () => (
   <>
     <Helmet>
-      <title>Products | Material Kit</title>
+      <title> Books | Material Kit</title>
     </Helmet>
     <Box
       sx={{
