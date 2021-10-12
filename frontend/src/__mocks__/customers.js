@@ -1,144 +1,147 @@
-import { v4 as uuid } from 'uuid';
+import { v4 as uuid } from "uuid";
+import user01 from "../static/images/users/23.jpeg";
+import user02 from "../static/images/users/22.jpeg";
+import user03 from "../static/images/users/24.jpeg";
 
 export default [
   {
     id: uuid(),
     address: {
-      country: 'USA',
-      state: 'West Virginia',
-      city: 'Parkersburg',
-      street: '2849 Fulton Street'
+      country: "SRI LANKA",
+      state: "WESTERN PROVINCE",
+      city: "COLOMBO",
+      street: "NO.78/118 NALANDA Street",
     },
-    avatarUrl: '/static/images/avatars/avatar_3.png',
+    avatarUrl: user01,
     createdAt: 1555016400000,
-    email: 'ekaterina.tankova@devias.io',
-    name: 'Ekaterina Tankova',
-    phone: '304-428-3097'
+    email: "SAMANTH.KUMARA@gmail.com",
+    name: "SAMANTHA KUNARA",
+    phone: "0775672345",
   },
   {
     id: uuid(),
     address: {
-      country: 'USA',
-      state: 'Bristow',
-      city: 'Iowa',
-      street: '1865  Pleasant Hill Road'
+      country: "SRI LANKA",
+      state: "NORTHERN",
+      city: "JAFFNA",
+      street: "1865 Suva Road",
     },
-    avatarUrl: '/static/images/avatars/avatar_4.png',
+    avatarUrl: user02,
     createdAt: 1555016400000,
-    email: 'cao.yu@devias.io',
-    name: 'Cao Yu',
-    phone: '712-351-5711'
+    email: "ramanndan2000@gmail.com",
+    name: "Ramanndan Kumara",
+    phone: "0775567345",
   },
   {
     id: uuid(),
     address: {
-      country: 'USA',
-      state: 'Georgia',
-      city: 'Atlanta',
-      street: '4894  Lakeland Park Drive'
+      country: "SRI LANKA",
+      state: "Northwestern province",
+      city: "Puttalama",
+      street: "No.12/234, Adiambalama",
     },
-    avatarUrl: '/static/images/avatars/avatar_2.png',
+    avatarUrl: user03,
     createdAt: 1555016400000,
-    email: 'alexa.richardson@devias.io',
-    name: 'Alexa Richardson',
-    phone: '770-635-2682'
+    email: "nirmal33@gmail.com",
+    name: "Nirmal Jayasingha",
+    phone: "0756723143",
   },
   {
     id: uuid(),
     address: {
-      country: 'USA',
-      state: 'Ohio',
-      city: 'Dover',
-      street: '4158  Hedge Street'
+      country: "SRI LANKA",
+      state: "Eastern",
+      city: "Ampara",
+      street: "No12, Main road",
     },
-    avatarUrl: '/static/images/avatars/avatar_5.png',
+    avatarUrl: "/static/images/avatars/avatar_5.png",
     createdAt: 1554930000000,
-    email: 'anje.keizer@devias.io',
-    name: 'Anje Keizer',
-    phone: '908-691-3242'
+    email: "anjupp@gmsil.com",
+    name: "Anjula Perera",
+    phone: "0712343456",
   },
   {
     id: uuid(),
     address: {
-      country: 'USA',
-      state: 'Texas',
-      city: 'Dallas',
-      street: '75247'
+      country: "SRI LANKA",
+      state: "Uva",
+      city: "Badulla",
+      street: "No 3, University Road",
     },
-    avatarUrl: '/static/images/avatars/avatar_6.png',
+    avatarUrl: "/static/images/avatars/avatar_6.png",
     createdAt: 1554757200000,
-    email: 'clarke.gillebert@devias.io',
-    name: 'Clarke Gillebert',
-    phone: '972-333-4106'
+    email: "kumarinu@gmail.com",
+    name: "Kumari Nuwanthika",
+    phone: "076342443",
   },
   {
     id: uuid(),
     address: {
-      country: 'USA',
-      state: 'California',
-      city: 'Bakerfield',
-      street: '317 Angus Road'
+      country: "SRI LANKA",
+      state: "Western",
+      city: "Gampaha",
+      street: "No317, Angus Road",
     },
-    avatarUrl: '/static/images/avatars/avatar_1.png',
+    avatarUrl: "/static/images/avatars/avatar_1.png",
     createdAt: 1554670800000,
-    email: 'adam.denisov@devias.io',
-    name: 'Adam Denisov',
-    phone: '858-602-3409'
+    email: "rovindunenuk21@gmail.com",
+    name: "Rovinu Nenuka",
+    phone: "0743323457",
   },
   {
     id: uuid(),
     address: {
-      country: 'USA',
-      state: 'California',
-      city: 'Redondo Beach',
-      street: '2188  Armbrester Drive'
+      country: "SRI LANKA",
+      state: "Western",
+      city: "Negombo",
+      street: "No 01, St.Peters road",
     },
-    avatarUrl: '/static/images/avatars/avatar_7.png',
+    avatarUrl: "/static/images/avatars/avatar_7.png",
     createdAt: 1554325200000,
-    email: 'ava.gregoraci@devias.io',
-    name: 'Ava Gregoraci',
-    phone: '415-907-2647'
+    email: "perera001@gmail.com",
+    name: "Jhosph Perera",
+    phone: "0778967008",
   },
   {
     id: uuid(),
     address: {
-      country: 'USA',
-      state: 'Nevada',
-      city: 'Las Vegas',
-      street: '1798  Hickory Ridge Drive'
+      country: "SRI LANKA",
+      state: "Central",
+      city: "Kandy",
+      street: "17/123, High Road",
     },
-    avatarUrl: '/static/images/avatars/avatar_8.png',
+    avatarUrl: "/static/images/avatars/avatar_8.png",
     createdAt: 1523048400000,
-    email: 'emilee.simchenko@devias.io',
-    name: 'Emilee Simchenko',
-    phone: '702-661-1654'
+    email: "wasanthiamanda234@gmail.com",
+    name: "Amanda Wasanthi",
+    phone: "0771234345",
   },
   {
     id: uuid(),
     address: {
-      country: 'USA',
-      state: 'Michigan',
-      city: 'Detroit',
-      street: '3934  Wildrose Lane'
+      country: "SRI LANKA",
+      state: "Southern",
+      city: "Gall",
+      street: "No 12, Gall road",
     },
-    avatarUrl: '/static/images/avatars/avatar_9.png',
+    avatarUrl: "/static/images/avatars/avatar_9.png",
     createdAt: 1554702800000,
-    email: 'kwak.seong.min@devias.io',
-    name: 'Kwak Seong-Min',
-    phone: '313-812-8947'
+    email: "kumaragall345@gmial.com",
+    name: "Wasantha Kuamra",
+    phone: "0754563409",
   },
   {
     id: uuid(),
     address: {
-      country: 'USA',
-      state: 'Utah',
-      city: 'Salt Lake City',
-      street: '368 Lamberts Branch Road'
+      country: "SRI LANKA",
+      state: "North Central",
+      city: "Anuradhapura",
+      street: "No 134, Tempal road",
     },
-    avatarUrl: '/static/images/avatars/avatar_10.png',
+    avatarUrl: "/static/images/avatars/avatar_10.png",
     createdAt: 1522702800000,
-    email: 'merrile.burgett@devias.io',
-    name: 'Merrile Burgett',
-    phone: '801-301-7894'
-  }
+    email: "boo123@gmail.com",
+    name: "Boopathy Nirmal",
+    phone: "0775643209",
+  },
 ];
