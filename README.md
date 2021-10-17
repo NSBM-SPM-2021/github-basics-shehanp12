@@ -1,5 +1,5 @@
 
-Email for Registation : sprasanna@mitrai.com
+test login credentials: : sprasanna@mitrai.com
 Passsword: Tripleh@123
 # :wave: Library Management System!
 
