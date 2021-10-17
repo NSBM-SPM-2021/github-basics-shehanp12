@@ -1,5 +1,5 @@
 
-# test login credentials: 
+# Test login credentials: 
 # Email: sprasanna@mitrai.com
 # Passsword: Tripleh@123
 # :wave: Library Management System!
